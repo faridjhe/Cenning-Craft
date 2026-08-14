@@ -1,0 +1,2872 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cenning Craft — Katalog Produk Custom Wisuda & Hadiah</title>
+<meta name="description" content="Katalog produk Cenning Craft: Papan Ucapan, Selempang, Buket, Banner, Plakat & Figura custom. Pesan langsung via WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,450;9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF6EF;
+    --bg-soft:#F3E7D8;
+    --purple-deep:#3B2652;
+    --purple:#7c56a8;
+    --purple-light:#EDE1F5;
+    --pink:#c97ba0;
+    --pink-deep:#9c3f70;
+    --pink-pale:#FBEFF4;
+    --gold:#C6A05C;
+    --gold-deep:#9C7A34;
+    --gold-pale:#FBF2DE;
+    --ink:#221a30;
+    --ink-soft:#786a86;
+    --white:#ffffff;
+    --line:#E9DEE8;
+    --shadow: 0 8px 22px rgba(59,38,82,0.10);
+    --shadow-lg: 0 22px 50px rgba(59,38,82,0.18);
+    --radius-lg: 20px;
+    --radius-md: 12px;
+    --ease: cubic-bezier(.22,.8,.24,1);
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Manrope', sans-serif;
+    color:var(--ink);
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
+    min-height:100vh;
+    padding-bottom:60px;
+    overflow-x:hidden;
+  }
+  h1,h2,h3, .brand, .price-tag{font-family:'Fraunces', serif; font-weight:600;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{ scroll-behavior:auto !important; }
+  }
+
+  .wrap{ max-width:1080px; margin:0 auto; padding: 34px 18px 0; position:relative; z-index:1;}
+
+  /* ---------- header ---------- */
+  header{ display:flex; align-items:center; justify-content:space-between; padding: 4px 0 6px;}
+  .brand{
+    display:inline-flex; align-items:center; gap:10px;
+    font-weight:600; color:var(--purple-deep); font-size:19px;
+    background:transparent; padding:4px 6px; border:none;
+    cursor:pointer; letter-spacing:.3px; transition:transform .18s var(--ease), color .2s var(--ease);
+  }
+  .brand:hover{ transform:translateY(-1px); color:var(--pink-deep); }
+  .brand:before{
+    content:""; width:9px; height:9px; border-radius:50%;
+    background:var(--pink-deep); display:inline-block;
+  }
+  h1{
+    font-size: clamp(32px, 5.4vw, 50px);
+    font-weight:700; color:var(--purple-deep);
+    margin: 20px 0 8px; line-height:1.08; letter-spacing:-.025em;
+  }
+  h1 em{ font-style:italic; color:var(--pink-deep); font-weight:600;}
+  header p{ color:var(--ink-soft); font-size:16px; max-width:480px; margin:0 auto; font-weight:500; line-height:1.6;}
+
+  .welcome-badge{
+    display:block; font-family:'Fraunces', serif; font-weight:700;
+    color:var(--purple-deep); font-size:clamp(30px, 6.5vw, 46px);
+    line-height:1.15; letter-spacing:-.02em; margin:0;
+  }
+
+  .promo-badge{
+    display:inline-flex; align-items:center; gap:8px; margin-top:18px;
+    background:var(--pink-pale); border:1px solid var(--gold);
+    color:var(--pink-deep); font-weight:700; font-size:12.5px; padding:9px 18px;
+    border-radius:999px; letter-spacing:.2px;
+  }
+
+  /* ---------- PREMIUM: garis pemisah emas & trust bar ---------- */
+  .gold-divider{
+    width:56px; height:3px; margin:16px auto 0; border-radius:999px;
+    background:linear-gradient(90deg, var(--gold-deep), var(--gold));
+  }
+  .trust-bar{
+    display:flex; flex-wrap:wrap; justify-content:center; gap:10px;
+    max-width:640px; margin:20px auto 0;
+  }
+  .trust-item{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--white); border:1px solid var(--line); border-radius:999px;
+    padding:7px 14px; font-size:12px; font-weight:700; color:var(--purple-deep);
+    box-shadow:var(--shadow);
+  }
+  .trust-item b{ color:var(--gold-deep); }
+
+  /* ---------- pages / router ---------- */
+  .page{ display:none; }
+  .page.active{ display:block; animation: pageIn .45s var(--ease); }
+  @keyframes pageIn{ from{ opacity:0; transform:translateY(12px);} to{ opacity:1; transform:translateY(0);} }
+  @media (prefers-reduced-motion: reduce){
+    .page.active{ animation:none; }
+  }
+
+  /* ---------- home menu : symmetric catalog grid ---------- */
+  .home-hero{ text-align:center; padding: 16px 0 4px;}
+  .home-menu{
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:16px;
+    max-width:720px; margin:34px auto 0;
+  }
+  @media (min-width:700px){
+    .home-menu{ grid-template-columns:repeat(3, 1fr); max-width:960px; }
+  }
+  @media (max-width:480px){
+    .home-menu{ grid-template-columns:1fr; max-width:420px; }
+  }
+  .menu-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+    box-shadow:var(--shadow); padding:24px 20px; cursor:pointer; text-align:center;
+    display:flex; flex-direction:column; align-items:center; justify-content:flex-start; gap:7px;
+    font-family:'Manrope', sans-serif;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+    position:relative; overflow:hidden;
+  }
+  .menu-card:before{
+    content:""; position:absolute; inset:0; opacity:0; border-radius:inherit;
+    background:radial-gradient(120px 120px at var(--mx,50%) var(--my,0%), rgba(169,122,166,.16), transparent 70%);
+    transition:opacity .3s var(--ease); pointer-events:none;
+  }
+  .menu-card:hover:before{ opacity:1; }
+  .menu-card:hover{ transform:translateY(-6px) scale(1.015); box-shadow:var(--shadow-lg); border-color:var(--pink-deep); }
+  .menu-card:active{ transform:translateY(-2px) scale(.99); }
+  .menu-card:focus-visible{ outline:2px solid var(--purple-deep); outline-offset:3px; }
+  .menu-icon{ font-size:38px; transition:transform .3s var(--ease); }
+  .menu-card:hover .menu-icon{ transform:scale(1.12) rotate(-4deg); }
+  .menu-title{ font-family:'Fraunces', serif; font-weight:700; font-size:19px; color:var(--purple-deep); margin-top:2px;}
+  .menu-desc{ font-size:13px; color:var(--ink-soft); font-weight:500; line-height:1.45;}
+  .menu-price{ font-family:'Fraunces', serif; font-weight:600; color:var(--pink-deep); font-size:15.5px; margin-top:4px;}
+  .menu-arrow{ margin-top:8px; font-size:12px; font-weight:700; color:var(--purple); letter-spacing:.2px; transition:transform .25s var(--ease);}
+  .menu-card:hover .menu-arrow{ transform:translateX(4px); }
+
+  /* ---------- back button + page hero ---------- */
+  .back-btn{
+    display:inline-flex; align-items:center; gap:6px; background:transparent;
+    border:1px solid var(--line); border-radius:999px; padding:8px 16px; font-weight:600;
+    font-size:13px; color:var(--purple-deep); box-shadow:none;
+    cursor:pointer; margin-bottom:18px; transition:background .15s, border-color .15s;
+  }
+  .back-btn:hover{ background:var(--pink-pale); border-color:var(--pink-deep); }
+  .page-hero{ text-align:center; padding: 2px 0 4px;}
+  .page-hero h1{ font-size:clamp(27px, 4.6vw, 39px); margin:6px 0 6px;}
+  .page-hero p{ color:var(--ink-soft); font-size:14.5px; font-weight:500; max-width:480px; margin:0 auto;}
+
+  /* ---------- layout ---------- */
+  .grid{
+    max-width:640px; margin:32px auto 0;
+  }
+  .card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-lg);
+    box-shadow:var(--shadow); padding: 30px 26px;
+  }
+
+  /* ---------- form ---------- */
+  fieldset{ border:none; margin:0 0 26px; padding:0 0 22px; border-bottom:1px solid var(--line);}
+  fieldset:last-of-type{ border-bottom:none; padding-bottom:0;}
+  legend{
+    font-family:'Fraunces', serif; font-weight:600; color:var(--purple-deep);
+    font-size:16.5px; margin-bottom:14px; display:flex; align-items:center; gap:8px;
+  }
+  .field{ margin-bottom:16px; }
+  label{ display:block; font-weight:600; font-size:13.5px; color:var(--ink); margin-bottom:6px;}
+  label .opt{ font-weight:500; color:var(--ink-soft); font-size:12px;}
+  label .req{ color:var(--pink-deep); }
+  input[type=text], input[type=date], textarea{
+    width:100%; font-family:'Manrope'; font-size:15px; font-weight:500;
+    color:var(--ink); background:var(--pink-pale); border:1.5px solid var(--line);
+    border-radius:var(--radius-md); padding:12px 14px; outline:none;
+    transition: border-color .15s, background .15s;
+  }
+  input::placeholder, textarea::placeholder{ color:#b7a89a; font-weight:400;}
+  input:focus, textarea:focus{ border-color:var(--purple-deep); background:var(--white);}
+  textarea{ resize:vertical; min-height:44px;}
+
+  .swatch-row{ display:flex; flex-wrap:wrap; gap:10px;}
+  .swatch{
+    display:flex; align-items:center; gap:8px;
+    border:1.5px solid var(--line); background:var(--white);
+    border-radius:999px; padding:8px 14px 8px 8px; cursor:pointer;
+    font-weight:600; font-size:13.5px; color:var(--ink);
+    transition: all .15s;
+  }
+  .swatch .dot{ width:18px; height:18px; border-radius:50%; border:1.5px solid rgba(0,0,0,.1); flex:none;}
+  .swatch input{ display:none;}
+  .swatch:hover{ border-color:var(--pink-deep); transform:translateY(-1px); }
+  .swatch:has(input:checked){
+    border-color:var(--purple-deep); background:var(--purple-light);
+    color:var(--purple-deep); box-shadow:none;
+  }
+
+  .pill-row{ display:flex; flex-wrap:wrap; gap:10px;}
+  .pill{
+    border:1.5px solid var(--line); background:var(--white); border-radius:999px;
+    padding:9px 16px; cursor:pointer; font-weight:600; font-size:13.5px;
+    color:var(--ink); transition:all .15s;
+  }
+  .pill input{ display:none;}
+  .pill:hover{ border-color:var(--pink-deep); transform:translateY(-1px); }
+  .pill:has(input:checked){
+    border-color:var(--purple-deep); background:var(--purple-light);
+    color:var(--purple-deep); box-shadow:none;
+  }
+
+  .shape-row{ display:flex; gap:12px;}
+  .shape-btn{
+    flex:1; text-align:center; border:1.5px solid var(--line); background:var(--white);
+    border-radius:var(--radius-md); padding:14px 10px; cursor:pointer;
+    font-family:'Manrope', sans-serif; font-weight:700; font-size:13.5px; color:var(--ink);
+    letter-spacing:.1px; transition:all .15s;
+  }
+  .shape-btn input{ display:none;}
+  .shape-btn .glyph{ display:block; width:32px; height:32px; margin:0 auto 8px; background:var(--purple-light); border:1.5px solid var(--purple);}
+  .shape-btn[data-shape="bulat"] .glyph{ border-radius:50%;}
+  .shape-btn[data-shape="kubah"] .glyph{ border-radius:50% 50% 6px 6px;}
+  .shape-btn:hover{ border-color:var(--pink-deep); transform:translateY(-1px); }
+  .shape-btn:has(input:checked){
+    border-color:var(--purple-deep); background:var(--purple-light); color:var(--purple-deep);
+    box-shadow:none;
+  }
+
+  .pkg-row{ display:flex; flex-direction:column; gap:10px;}
+  .pkg{
+    display:flex; align-items:center; justify-content:space-between; gap:10px;
+    border:1.5px solid var(--line); border-radius:var(--radius-md);
+    padding:13px 16px; cursor:pointer; transition:all .15s;
+  }
+  .pkg input{ display:none;}
+  .pkg:hover{ border-color:var(--pink-deep); transform:translateY(-1px); }
+  .pkg .txt strong{ display:block; font-size:14.5px; color:var(--ink); font-weight:600;}
+  .pkg .txt span{ font-size:12.5px; color:var(--ink-soft); font-weight:500;}
+  .pkg .price{ font-family:'Fraunces', serif; font-weight:600; color:var(--purple-deep); font-size:16px; white-space:nowrap;}
+  .pkg:has(input:checked){
+    border-color:var(--pink-deep); background:var(--pink-pale);
+    box-shadow:none;
+  }
+  .pkg.best:after{
+    content:"Paling hemat"; position:relative; margin-left:8px;
+    background:var(--pink-deep); color:#fff; font-size:10px; font-weight:700;
+    padding:3px 9px; border-radius:999px; letter-spacing:.2px;
+  }
+
+  .addon-box{ background:var(--pink-pale); border:1px solid var(--line); border-radius:var(--radius-md); padding:18px 16px 6px; margin-top:4px;}
+  .addon-box .addon-title{ font-family:'Fraunces', serif; font-weight:600; color:var(--purple-deep); font-size:14.5px; margin-bottom:12px; display:flex; align-items:center; gap:6px;}
+  .hidden{ display:none !important;}
+
+  .grid-2{ display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media (max-width:480px){ .grid-2{ grid-template-columns:1fr; } }
+
+  .hint{ font-size:12px; color:var(--ink-soft); margin-top:5px; font-weight:500;}
+
+  .submit-btn{
+    width:100%; border:none; cursor:pointer; font-family:'Fraunces', serif;
+    font-weight:700; font-size:16.5px; color:#fff; padding:16px;
+    border-radius:999px; margin-top:8px; letter-spacing:.1px;
+    background:linear-gradient(120deg, var(--purple-deep), #2a1c3d);
+    box-shadow: 0 10px 22px rgba(59,38,82,.28), inset 0 0 0 1px rgba(198,160,92,.35);
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    transition: transform .18s var(--ease), background .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .submit-btn:hover{ background:linear-gradient(120deg, #2a1c3d, #1f1530); transform:translateY(-2px); box-shadow:0 16px 32px rgba(59,38,82,.36), inset 0 0 0 1px rgba(198,160,92,.5); }
+  .submit-btn:active{ transform:scale(.98);}
+  .submit-btn:focus-visible, .swatch:has(input:focus-visible), .shape-btn:has(input:focus-visible), .pkg:has(input:focus-visible), .pill:has(input:focus-visible){
+    outline:2px solid var(--purple-deep); outline-offset:2px;
+  }
+
+  .pay-note{
+    margin-top:18px; background:var(--pink-pale); border:1px solid var(--line); border-radius:var(--radius-md);
+    padding:14px 16px; font-size:13.5px; color:var(--purple-deep); font-weight:500; line-height:1.55;
+  }
+  .pay-note b{ display:block; margin-bottom:4px; font-size:14px; font-weight:700;}
+  .pay-note .rek{ font-family:'Fraunces', serif; font-size:15px; color:var(--ink); letter-spacing:.4px;}
+
+  /* ---------- review modal ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(20,14,28,.55);
+    display:none; align-items:flex-end; justify-content:center;
+    z-index:50; padding:0; backdrop-filter: blur(4px);
+  }
+  .modal-overlay.open{ display:flex; }
+  @media (min-width:640px){
+    .modal-overlay{ align-items:center; padding:20px;}
+  }
+  .modal-sheet{
+    background:var(--white); width:100%; max-width:460px;
+    border-radius: 20px 20px 0 0; padding:24px 22px 22px;
+    max-height:92vh; overflow-y:auto; border:1px solid var(--line);
+    box-shadow:var(--shadow-lg);
+    animation: sheetUp .3s var(--ease);
+  }
+  @media (min-width:640px){
+    .modal-sheet{ border-radius:var(--radius-lg); }
+  }
+  @keyframes sheetUp{
+    from{ transform:translateY(24px); opacity:0;}
+    to{ transform:translateY(0); opacity:1;}
+  }
+  .modal-sheet h3{ color:var(--purple-deep); font-size:19px; margin:0 0 4px; text-align:center;}
+  .modal-sheet .modal-sub{ text-align:center; color:var(--ink-soft); font-size:13px; font-weight:500; margin-bottom:16px;}
+  .modal-actions{ display:flex; gap:10px; margin-top:20px;}
+  .modal-actions button{
+    flex:1; border:none; cursor:pointer; font-family:'Fraunces', serif; font-weight:600;
+    font-size:14.5px; padding:13px; border-radius:999px; transition:transform .12s, background .15s;
+  }
+  .modal-actions button:active{ transform:scale(.97); }
+  .btn-edit{ background:var(--purple-light); color:var(--purple-deep);}
+  .btn-edit:hover{ background:#e0cdf0; }
+  .btn-send{
+    background:var(--purple-deep);
+    color:#fff; box-shadow:0 10px 20px rgba(74,49,100,.28);
+  }
+  .btn-send:hover{ background:#32204a; }
+
+  /* ---------- preview (acrylic board) ---------- */
+  .board-stage{
+    background: linear-gradient(180deg, #f7efe6 0%, #efe1d6 100%);
+    border-radius:var(--radius-md); padding: 30px 16px 20px; position:relative; overflow:hidden;
+  }
+  .board-stage + .board-stage{ margin-top:14px;}
+  .board-stage:before{
+    content:""; position:absolute; bottom:0; left:10%; right:10%; height:14px;
+    background:rgba(74,49,100,.12); filter:blur(6px); border-radius:50%;
+  }
+  .flowers{ display:flex; justify-content:center; gap:14px; margin-bottom:2px; position:relative; z-index:2; --flower-color:#e5484d;}
+  .flower-shape{
+    width:12px; height:12px; border-radius:50%;
+    background:var(--flower-color);
+    box-shadow:
+      -9px 0 0 -2.5px var(--flower-color),
+       9px 0 0 -2.5px var(--flower-color),
+       0 -9px 0 -2.5px var(--flower-color),
+       0  9px 0 -2.5px var(--flower-color);
+    position:relative;
+    filter: drop-shadow(0 0 0.6px rgba(74,49,100,.4));
+    transition: background .15s;
+  }
+  .flower-shape:after{
+    content:""; position:absolute; inset:0; margin:auto;
+    width:5px; height:5px; border-radius:50%; background:#ffd54f;
+  }
+
+  .board{
+    width:190px; height:190px; margin:0 auto; background:#fff;
+    border:3px solid rgba(0,0,0,.06); position:relative; z-index:1;
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    padding:16px 14px; transition: border-radius .2s, background .2s;
+    box-shadow: 0 14px 20px rgba(74,49,100,.16), inset 0 0 0 6px rgba(255,255,255,.5);
+  }
+  .board.shape-bulat{ border-radius:50%;}
+  .board.shape-kubah{ border-radius: 50% 50% 10% 10% / 62% 62% 10% 10%;}
+  .board.color-putih{ background:#ffffff; }
+  .board.color-hitam{ background:#2c2230; }
+  .board.color-pink{ background:#f3ddd0; }
+  .board .ucapan-untuk{
+    font-size:10px; font-weight:700; color:var(--pink-deep); text-transform:uppercase;
+    letter-spacing:.5px; margin-top:4px; word-break:break-word;
+  }
+  .board.color-hitam .ucapan-untuk{ color:#e8c9a3; }
+  .board .ucapan-atas{
+    font-family:'Fraunces', serif; font-weight:600; font-size:15px; line-height:1.15;
+    color:var(--purple-deep); word-break:break-word;
+  }
+  .board.color-hitam .ucapan-atas{ color:#f3e2cf;}
+  .board .ucapan-bawah{
+    font-size:11.5px; font-weight:500; color:var(--ink); margin-top:5px; line-height:1.25; word-break:break-word;
+  }
+  .board.color-hitam .ucapan-bawah{ color:#ddc9bd;}
+  .board .from{
+    font-size:10px; font-weight:700; color:var(--pink-deep); margin-top:8px;
+    text-transform:uppercase; letter-spacing:.4px;
+  }
+  .board-label{ text-align:center; font-size:11.5px; font-weight:700; color:var(--purple); margin:10px 0 -2px; text-transform:uppercase; letter-spacing:.4px;}
+
+  .summary{ text-align:left; margin-top:20px; font-size:13.5px; font-weight:500; color:var(--ink);}
+  .summary .row{ display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px solid var(--line);}
+  .summary .row span:first-child{ color:var(--ink-soft); flex:none;}
+  .summary .row span:last-child{ text-align:right; font-weight:600;}
+  .summary .total{ display:flex; justify-content:space-between; align-items:center; margin-top:14px;}
+  .summary .total .price-tag{ font-size:24px; color:var(--pink-deep); font-weight:600;}
+  .summary .subhead{ font-family:'Fraunces', serif; font-weight:600; color:var(--purple-deep); font-size:13.5px; margin:14px 0 2px;}
+
+  footer{ text-align:center; margin-top:40px; color:var(--ink-soft); font-size:12.5px; font-weight:500;}
+  footer .heart{ color:var(--pink-deep);}
+
+  /* ---------- picker trigger (popup select) ---------- */
+  .picker-trigger{
+    width:100%; display:flex; align-items:center; justify-content:space-between;
+    gap:10px; border:1.5px solid var(--line); background:var(--white);
+    border-radius:var(--radius-md); padding:13px 15px; cursor:pointer;
+    font-family:'Manrope'; font-weight:600; font-size:14.5px; color:var(--ink);
+    transition:all .15s; text-align:left;
+  }
+  .picker-trigger:hover{ border-color:var(--purple-deep); background:var(--pink-pale); }
+  .picker-trigger:focus-visible{ outline:2px solid var(--purple-deep); outline-offset:2px; }
+  .picker-trigger .picker-value{ display:flex; align-items:center; gap:8px; }
+  .picker-trigger .picker-dot{ width:18px; height:18px; border-radius:50%; border:1.5px solid rgba(0,0,0,.1); flex:none;}
+  .picker-trigger .picker-chevron{ color:var(--purple); font-size:15px; flex:none; transition:transform .15s;}
+
+  .picker-modal-head{ display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;}
+  .picker-modal-head h3{ margin:0; text-align:left;}
+  .picker-close{
+    background:var(--purple-light); border:none; color:var(--purple-deep);
+    font-weight:700; width:30px; height:30px; border-radius:50%;
+    cursor:pointer; font-size:14px; line-height:1; flex:none;
+  }
+  #optionPickerBody .swatch-row, #optionPickerBody .pill-row{ display:flex; flex-wrap:wrap; gap:10px;}
+  #optionPickerBody .pkg-row{ display:flex; flex-direction:column; gap:10px;}
+  #optionPickerBody .shape-row{ display:flex; gap:12px;}
+  #optionPickerBody .swatch, #optionPickerBody .pill, #optionPickerBody .pkg, #optionPickerBody .shape-btn{ width:100%; }
+  #optionPickerBody .swatch-row .swatch, #optionPickerBody .pill-row .pill{ width:auto; }
+
+  /* ---------- catalog: search & filter ---------- */
+  .catalog-toolbar{ max-width:920px; margin:30px auto 0; display:flex; flex-direction:column; gap:14px;}
+  .search-box{ position:relative; }
+  .search-box input{
+    width:100%; font-family:'Manrope'; font-size:15px; font-weight:500;
+    color:var(--ink); background:var(--white); border:1.5px solid var(--line);
+    border-radius:999px; padding:13px 18px 13px 42px; outline:none;
+    box-shadow:none; transition:border-color .15s;
+  }
+  .search-box input:focus{ border-color:var(--purple-deep); }
+  .search-box input::placeholder{ color:#b7a89a; font-weight:400;}
+  .search-box .search-icon{ position:absolute; left:15px; top:50%; transform:translateY(-50%); font-size:15px; opacity:.55;}
+  .chip-row{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center;}
+  .chip{
+    border:1.5px solid var(--line); background:var(--white); border-radius:999px;
+    padding:8px 16px; cursor:pointer; font-weight:600; font-size:12.5px;
+    color:var(--ink-soft); transition:all .15s; font-family:'Manrope';
+  }
+  .chip.active, .chip:hover{ border-color:var(--purple-deep); background:var(--purple-deep); color:#fff; }
+  .catalog-empty{ text-align:center; color:var(--ink-soft); font-weight:500; font-size:14px; padding:30px 10px; display:none;}
+  .catalog-empty.show{ display:block; }
+
+  /* ---------- catalog: cards with badges ---------- */
+  .menu-card{ position:relative; }
+  .menu-card.hide{ display:none !important; }
+  .menu-badge{
+    position:absolute; top:12px; right:12px; font-size:9.5px; font-weight:700;
+    padding:4px 10px; border-radius:999px; letter-spacing:.3px; text-transform:uppercase;
+  }
+  .menu-badge.best{ background:linear-gradient(120deg, var(--pink-deep), #7a2f56); color:#fff; }
+  .menu-badge.new{ background:transparent; color:var(--purple-deep); border:1px solid var(--purple-deep); }
+  .menu-badge.premium{
+    background:linear-gradient(120deg, var(--gold-deep), var(--gold));
+    color:#3a2c0a; box-shadow:0 4px 10px rgba(156,122,52,.35);
+  }
+
+  /* ---------- catalog: testimonials ---------- */
+  .testi-wrap{ max-width:920px; margin:48px auto 0; }
+  .testi-title{
+    text-align:center; font-family:'Fraunces', serif; color:var(--purple-deep);
+    font-size:19px; font-weight:600; margin-bottom:18px;
+  }
+  .testi-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+  @media (max-width:760px){ .testi-grid{ grid-template-columns:1fr; } }
+  .testi-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius-md); box-shadow:var(--shadow);
+    padding:20px 18px; font-size:13px; font-weight:500; color:var(--ink); line-height:1.55;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+  }
+  .testi-card:hover{ transform:translateY(-3px); box-shadow:var(--shadow-lg); }
+  .testi-stars{ color:var(--pink-deep); font-size:13px; margin-bottom:8px; letter-spacing:1px;}
+  .testi-name{ font-family:'Fraunces', serif; font-weight:600; color:var(--purple-deep); margin-top:10px; font-size:12.5px;}
+
+  /* ---------- floating whatsapp button ---------- */
+  .fab-wa{
+    position:fixed; bottom:20px; right:18px; z-index:40;
+    background:#1fa768;
+    color:#fff; border:none; border-radius:999px; padding:14px 20px;
+    display:flex; align-items:center; gap:8px; font-family:'Fraunces', serif;
+    font-weight:600; font-size:14px; box-shadow:0 10px 22px rgba(31,167,104,.32);
+    cursor:pointer; transition:transform .12s;
+  }
+  .fab-wa:active{ transform:scale(.96); }
+  @media (max-width:480px){ .fab-wa{ padding:14px; bottom:16px; right:14px;} .fab-wa .fab-label{ display:none; } }
+
+  /* ---------- catalog: product thumbnail (photo) ---------- */
+  .menu-thumb{
+    width:100%; height:112px; border-radius:10px; overflow:hidden; margin-bottom:8px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--pink-pale); flex:none;
+  }
+  .menu-thumb img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .menu-thumb .menu-icon{ font-size:38px; margin:0; }
+  /* menu-info is an optional wrapper in some cards' markup; keep it invisible to layout
+     so every card lines up the same way whether or not its title/desc are wrapped in it */
+  .menu-info{ display:contents; }
+
+  /* ---------- file upload (foto referensi / foto pelanggan) ---------- */
+  .file-upload-box{
+    border:1.5px dashed var(--line); background:var(--pink-pale); border-radius:var(--radius-md);
+    padding:16px; text-align:center; cursor:pointer; transition:all .15s; position:relative;
+  }
+  .file-upload-box:hover{ border-color:var(--purple-deep); background:var(--purple-light); }
+  .file-upload-box input[type=file]{
+    position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%;
+  }
+  .file-upload-box .fu-icon{ font-size:24px; }
+  .file-upload-box .fu-text{ font-weight:700; font-size:13.5px; color:var(--purple-deep); margin-top:6px;}
+  .file-upload-box .fu-sub{ font-weight:500; font-size:11.5px; color:var(--ink-soft); margin-top:2px;}
+  .file-preview{ display:none; margin-top:12px; position:relative; }
+  .file-preview.show{ display:block; }
+  .file-preview img{ width:100%; max-height:220px; object-fit:cover; border-radius:var(--radius-md); box-shadow:var(--shadow); }
+  .file-preview .fp-remove{
+    position:absolute; top:8px; right:8px; background:rgba(30,20,45,.7); color:#fff; border:none;
+    width:28px; height:28px; border-radius:50%; cursor:pointer; font-weight:700; font-size:13px;
+  }
+  .file-status{ font-size:12px; font-weight:600; margin-top:8px; }
+  .file-status.uploading{ color:var(--purple); }
+  .file-status.done{ color:#1fa768; }
+  .file-status.error{ color:var(--pink-deep); }
+  .submit-btn:disabled{ opacity:.6; cursor:not-allowed; }
+
+  /* ---------- PREMIUM: tombol Katalog WhatsApp (hero) ---------- */
+  .catalog-cta{
+    display:inline-flex; align-items:center; gap:8px; margin-top:16px;
+    background:var(--purple-deep); color:#fff; font-family:'Fraunces', serif;
+    font-weight:600; font-size:14px; padding:12px 22px; border-radius:999px;
+    border:1px solid var(--purple-deep); box-shadow:0 10px 22px rgba(74,49,100,.22);
+    cursor:pointer; text-decoration:none; transition:transform .12s, background .15s;
+  }
+  .catalog-cta:hover{ background:#32204a; }
+  .catalog-cta:active{ transform:scale(.97); }
+  .catalog-cta .cc-icon{ font-size:16px; }
+
+  /* ---------- PREMIUM: grup tombol mengambang (WA chat + Katalog) ---------- */
+  .fab-group{
+    position:fixed; bottom:20px; right:18px; z-index:40;
+    display:flex; flex-direction:column; align-items:flex-end; gap:10px;
+  }
+  .fab-group .fab-wa, .fab-group .fab-catalog{ position:static; }
+  .fab-catalog{
+    background:var(--purple-deep);
+    color:#fff; border:none; border-radius:999px; padding:12px 18px;
+    display:flex; align-items:center; gap:8px; font-family:'Fraunces', serif;
+    font-weight:600; font-size:13.5px; box-shadow:0 10px 22px rgba(74,49,100,.28);
+    cursor:pointer; transition:transform .12s, background .15s; text-decoration:none;
+  }
+  .fab-catalog:hover{ background:#32204a; }
+  .fab-catalog:active{ transform:scale(.96); }
+  @media (max-width:480px){ .fab-catalog{ padding:12px;} .fab-catalog .fab-label{ display:none; } }
+
+  /* ---------- PREMIUM: tombol salin rekening ---------- */
+  .rek-row{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .copy-rek-btn{
+    display:inline-flex; align-items:center; gap:4px; border:1px solid var(--purple-deep); cursor:pointer;
+    background:transparent; color:var(--purple-deep); font-family:'Manrope'; font-weight:700;
+    font-size:11.5px; padding:5px 10px; border-radius:999px; transition:transform .12s, background .15s, color .15s;
+  }
+  .copy-rek-btn:hover{ background:var(--purple-deep); color:#fff; }
+  .copy-rek-btn:active{ transform:scale(.94); }
+  .copy-rek-btn.copied{ background:#1fa768; border-color:#1fa768; color:#fff; }
+
+  /* ---------- PREMIUM: toast notifikasi ---------- */
+  .toast{
+    position:fixed; left:50%; bottom:96px; transform:translateX(-50%) translateY(20px);
+    background:var(--purple-deep); color:#fff; font-family:'Manrope'; font-weight:600;
+    font-size:13.5px; padding:11px 20px; border-radius:999px; box-shadow:0 10px 24px rgba(30,20,45,.3);
+    opacity:0; pointer-events:none; transition:opacity .2s, transform .2s; z-index:60; white-space:nowrap;
+  }
+  .toast.show{ opacity:1; transform:translateX(-50%) translateY(0); }
+  @media (max-width:480px){ .toast{ white-space:normal; max-width:88vw; text-align:center; } }
+
+  /* ---------- PREMIUM: tombol bagikan katalog ---------- */
+  .share-cta{
+    display:inline-flex; align-items:center; gap:6px; margin-top:12px;
+    background:transparent; color:var(--ink-soft); font-family:'Manrope';
+    font-weight:600; font-size:12.5px; border:none; cursor:pointer; padding:6px 4px;
+    text-decoration:underline; text-underline-offset:3px;
+  }
+  .share-cta:hover{ color:var(--purple-deep); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <button type="button" class="brand" data-go="page-home">Cenning Craft</button>
+  </header>
+
+  <!-- ============ PAGE: HOME / KATALOG PRODUK ============ -->
+  <section class="page active" id="page-home">
+    <div class="home-hero">
+      <h1 class="welcome-badge">👋 Selamat Datang di Cenning Craft</h1>
+      <div class="gold-divider"></div>
+      <div class="promo-badge">⏱️ Estimasi pengerjaan 1 hari — pesan minimal H-1 sebelum tanggal dibutuhkan</div>
+
+      <div class="trust-bar">
+        <span class="trust-item"><b>⭐ 4.9/5</b> Rating Pelanggan</span>
+        <span class="trust-item"><b>500+</b> Pesanan Selesai</span>
+        <span class="trust-item"><b>✅</b> Kualitas Premium Terjamin</span>
+      </div>
+    </div>
+
+    <div class="catalog-toolbar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="catalogSearch" placeholder="Cari produk... cth. buket, plakat, banner">
+      </div>
+    </div>
+
+    <div class="home-menu" id="catalogGrid">
+      <button type="button" class="menu-card" data-go="page-papan" data-cat="ucapan" data-name="papan ucapan akrilik custom wisuda" data-photo="https://lh3.googleusercontent.com/sitesv/AG8ngQWSNMPxyQGcK1BRRaXASa6ZpOsU9UkT7cAxYNA6CQzSHhUCQTrMbKXL0b_DiUzuOzsbIGjbC_EJ6BqYjqMvhCwXC_eY0wb30pWnfU9OQCrwSkh3g5xn2Xy8ucAQbGAuhvGGtdOUnjZC9cbyzIUnPEVrGNWMJPClbVrO-Hn8wCGJ0Fho6DILLrTrMNMZp-Zo8V1qrfNF_fjzTSkD2_GSSC6OWOH9CloM6fIj1sVP=w600">
+        <span class="menu-badge best">🔥 Terlaris</span>
+        <div class="menu-thumb"><span class="menu-icon">🎓</span></div>
+        <div class="menu-info">
+          <span class="menu-title">Papan Ucapan</span>
+          <span class="menu-desc">Papan akrilik custom untuk wisuda & momen spesial</span>
+          <span class="menu-price">Mulai Rp70.000</span>
+          <span class="menu-arrow">Lihat Menu →</span>
+        </div>
+      </button>
+      <button type="button" class="menu-card" data-go="page-selempang" data-cat="wisuda" data-name="selempang wisuda custom" data-photo="https://lh3.googleusercontent.com/sitesv/AG8ngQVxUX3ZCxX3-kN6hgFNvr6_2Tq6X7D7r_Iuorncvk64RKwybmkAO-IjphtER-ylWSvMtTN7XTOnYoPnSXIp8tQdUQbCtaHmcehFl6y9T7F5Pvp2pBW1SftObjj7TwbtW9FVVwPq-90MHawDLBVPZQtV8CNYXaMctPcPZruStTfoNMUSJ0JIi4id-us4jl5gfbVTsLysIuoifo-d3XrGV44i8a778YtslkJYw0XzrA8=w600">
+        <span class="menu-badge best">🔥 Terlaris</span>
+        <div class="menu-thumb"><span class="menu-icon">🎗️</span></div>
+        <span class="menu-title">Selempang</span>
+        <span class="menu-desc">Selempang wisuda custom, bisa paket bareng papan ucapan</span>
+        <span class="menu-price">Mulai Rp70.000</span>
+        <span class="menu-arrow">Lihat Menu →</span>
+      </button>
+      <button type="button" class="menu-card" data-go="page-buket" data-cat="bunga" data-name="buket bunga" data-photo="https://lh3.googleusercontent.com/sitesv/AG8ngQWolh_rL55Q3V5SGbOCn5xxosVu7LMY78YBEB4MZ9N6R8C5Q0cD62vRQWjMOdMdDFO4hty6osly_5aETOI5SEpOyXrpvG8F7VyZMYW4YFeBwjYGusBLRz86VyUmtjr55ciV5TVnjGh6BOynyCWdpMio3Tb0HgAU7ge7PmCEqKX0zHR7TxBkVe-LN_jDb_58ni6eoXPG-B8xkIN9mULPV8uLkVgvHIdmyCehDQR97P0=w600">
+        <span class="menu-badge best">🔥 Terlaris</span>
+        <div class="menu-thumb"><span class="menu-icon">💐</span></div>
+        <span class="menu-title">Buket Bunga</span>
+        <span class="menu-desc">Buket bunga cantik, bisa paket bareng papan ucapan</span>
+        <span class="menu-price">Mulai Rp50.000</span>
+        <span class="menu-arrow">Lihat Menu →</span>
+      </button>
+      <button type="button" class="menu-card" data-go="page-banner" data-cat="ucapan" data-name="banner custom spanduk backdrop" data-photo="https://lh3.googleusercontent.com/sitesv/AG8ngQUsQDk3VEOvQ9pC2c5vX9Dz9v9GWpE2-KwWD0NMC7rzeT5Xv8fPjOa135P145uQ0i9fx7VKYuTwP9cAYVuxlA7JKZKhwaUH4M6iUlULU5TU6Y2lcwzRoGMBjZcyykijZRaZ35wL4K5JxJdPsswgX2V7K5U1Mw0av5G3SSeszaf8eKC5CkVCOBcXcpB98kIx2safz0lz2uMSbNZ_pixFk__RObrwR3_9f39NCLRmbT4=w600">
+        <div class="menu-thumb"><span class="menu-icon">🏳️</span></div>
+        <div class="menu-info">
+          <span class="menu-title">Banner Custom</span>
+          <span class="menu-desc">Spanduk / backdrop ucapan custom untuk dekorasi momen spesial</span>
+          <span class="menu-price">Mulai Rp120.000</span>
+          <span class="menu-arrow">Lihat Menu →</span>
+        </div>
+      </button>
+      <button type="button" class="menu-card" data-go="page-plakat" data-cat="plakat" data-name="plakat custom penghargaan akrilik kayu" data-photo="https://lh3.googleusercontent.com/sitesv/AG8ngQVPXtQ4wE-XZo6TCW_8jI6xP_FjJs9Pk7qWTkzBVb7cTxsV04DFPc41LK-B-ksVjy3us4OuyNngem_KFn20yewFtAMVnxlpmk-tvCVuENvumYEm8MR2goEoxIZP3xZc9b7926a-E1wRcN49VPVgLyT2jrIcLZlCPFphtT-PqjCdBs_aUpl92MDAehBGEMwVSEbGW6z6G4eWRFDmY6ivgfg7ZPyTBL0kaxI7CE-nh9Q=w600">
+        <div class="menu-thumb"><span class="menu-icon">🏆</span></div>
+        <span class="menu-title">Plakat Custom</span>
+        <span class="menu-desc">Plakat penghargaan akrilik / kayu, custom teks & ukuran</span>
+        <span class="menu-price">Mulai Rp90.000</span>
+        <span class="menu-arrow">Lihat Menu →</span>
+      </button>
+      <button type="button" class="menu-card" data-go="page-figura" data-cat="plakat" data-name="figura dan bingkai foto custom" data-photo="https://lh3.googleusercontent.com/sitesv/AG8ngQUKNN9iO2GzzJXf--3eMOnZWXeTED-BNxEni0ad0uDRDgDF7oTx8qhoWLxg1fWl9YnSy-ceIS4lYkOMCt1XNtJxBbkNQJ6QA_dYSIFNGK0APcr_9U6j1cqu2vsZg6ylPpgnqOBgks41GDtXtcL802dWoLKNDxU5apIxJMXB4Cvv4nd-5MvQtzCNBWBxDYV3IvGUTgmWBDjhu9_kn-NSTIEYkfHky3ptZySnmnCeabo=w600">
+        <div class="menu-thumb"><span class="menu-icon">🖼️</span></div>
+        <span class="menu-title">Figura & Bingkai</span>
+        <span class="menu-desc">Bingkai foto custom untuk kenang-kenangan & hadiah</span>
+        <span class="menu-price">Mulai Rp60.000</span>
+        <span class="menu-arrow">Lihat Menu →</span>
+      </button>
+    </div>
+
+    <p class="catalog-empty" id="catalogEmpty">Produk tidak ditemukan 🙁 coba kata kunci lain ya.</p>
+
+    <div class="testi-wrap">
+      <div class="testi-title">🤎 Kata Mereka</div>
+      <div class="testi-grid">
+        <div class="testi-card"><div class="testi-stars">★★★★★</div>Papan ucapannya lucu banget dan cepat jadi, pas buat wisuda temanku!<div class="testi-name">— Rina, UNM</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div>Buketnya cantik, warnanya custom sesuai request. Recommended!<div class="testi-name">— Alya, FBS</div></div>
+        <div class="testi-card"><div class="testi-stars">★★★★★</div>Selempangnya rapi, bahannya bagus dan harganya worth it.<div class="testi-name">— Fadhil, UNM</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAGE: PAPAN UCAPAN ============ -->
+  <section class="page" id="page-papan">
+    <button type="button" class="back-btn" data-go="page-home">← Menu Utama</button>
+    <div class="page-hero">
+      <h1>Papan Ucapan <em>Akrilik</em></h1>
+      <p>Kejutan manis buat wisuda, ulang tahun, atau momen spesial orang tersayang.</p>
+      <div class="promo-badge">🎉 Paket Bundling 2 Papan cuma Rp100.000 — hemat Rp40.000!</div>
+    </div>
+
+    <form class="grid" id="papanForm">
+      <div class="card form-col">
+
+        <fieldset>
+          <legend>📦 Jumlah Papan</legend>
+          <div class="field">
+            <div class="pkg-row" id="paketHarga">
+              <label class="pkg"><input type="radio" name="paket" value="1" data-harga="70000" checked>
+                <span class="txt"><strong>1 Papan</strong><span>Cocok untuk 1 ucapan spesial</span></span>
+                <span class="price">Rp70.000</span>
+              </label>
+              <label class="pkg best"><input type="radio" name="paket" value="2" data-harga="100000">
+                <span class="txt"><strong>2 Papan</strong><span>Paket bundling — lebih hemat</span></span>
+                <span class="price">Rp100.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="papanBoard1">
+          <legend>💌 Papan 1 — Isi Ucapan</legend>
+          <div class="field">
+            <label for="ucapanAtas">Ucapan Atas <span class="req">*</span></label>
+            <input type="text" id="ucapanAtas" placeholder="Cth. Congratulation" required maxlength="40">
+          </div>
+          <div class="field">
+            <label for="penerima">Nama Penerima <span class="req">*</span></label>
+            <input type="text" id="penerima" placeholder="Cth. Nadia Putri" required>
+          </div>
+          <div class="field">
+            <label for="ucapanBawah">Ucapan Bawah <span class="opt">(opsional)</span></label>
+            <textarea id="ucapanBawah" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+          </div>
+          <div class="field">
+            <label for="from">From <span class="req">*</span></label>
+            <input type="text" id="from" placeholder="Cth. Keluarga Besar" required>
+          </div>
+          <div class="field">
+            <label>Warna Bunga <span class="req">*</span></label>
+            <div class="swatch-row">
+              <label class="swatch"><input type="radio" name="bunga" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+              <label class="swatch"><input type="radio" name="bunga" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+              <label class="swatch"><input type="radio" name="bunga" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+              <label class="swatch"><input type="radio" name="bunga" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Bentuk Papan <span class="req">*</span></label>
+            <div class="shape-row">
+              <label class="shape-btn" data-shape="bulat"><input type="radio" name="bentuk" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+              <label class="shape-btn" data-shape="kubah"><input type="radio" name="bentuk" value="Kubah"><span class="glyph"></span>Kubah</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Warna Papan <span class="req">*</span></label>
+            <div class="swatch-row">
+              <label class="swatch"><input type="radio" name="papan" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+              <label class="swatch"><input type="radio" name="papan" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+              <label class="swatch"><input type="radio" name="papan" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="papanBoard2" class="hidden">
+          <legend>💌 Papan 2 — Isi Ucapan</legend>
+          <div class="field">
+            <label for="ucapanAtas2">Ucapan Atas <span class="req">*</span></label>
+            <input type="text" id="ucapanAtas2" data-req placeholder="Cth. Happy Birthday" maxlength="40">
+          </div>
+          <div class="field">
+            <label for="penerima2">Nama Penerima <span class="req">*</span></label>
+            <input type="text" id="penerima2" data-req placeholder="Cth. Nadia Putri">
+          </div>
+          <div class="field">
+            <label for="ucapanBawah2">Ucapan Bawah <span class="opt">(opsional)</span></label>
+            <textarea id="ucapanBawah2" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+          </div>
+          <div class="field">
+            <label for="from2">From <span class="req">*</span></label>
+            <input type="text" id="from2" data-req placeholder="Cth. Keluarga Besar">
+          </div>
+          <div class="field">
+            <label>Warna Bunga <span class="req">*</span></label>
+            <div class="swatch-row">
+              <label class="swatch"><input type="radio" name="bunga2" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+              <label class="swatch"><input type="radio" name="bunga2" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+              <label class="swatch"><input type="radio" name="bunga2" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+              <label class="swatch"><input type="radio" name="bunga2" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Bentuk Papan <span class="req">*</span></label>
+            <div class="shape-row">
+              <label class="shape-btn" data-shape="bulat"><input type="radio" name="bentuk2" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+              <label class="shape-btn" data-shape="kubah"><input type="radio" name="bentuk2" value="Kubah"><span class="glyph"></span>Kubah</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Warna Papan <span class="req">*</span></label>
+            <div class="swatch-row">
+              <label class="swatch"><input type="radio" name="papan2" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+              <label class="swatch"><input type="radio" name="papan2" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+              <label class="swatch"><input type="radio" name="papan2" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🗓️ Jadwal Pengantaran</legend>
+          <div class="grid-2">
+            <div class="field">
+              <label for="tanggal">Tanggal Pengantaran <span class="req">*</span></label>
+              <input type="date" id="tanggal" required>
+            </div>
+            <div class="field">
+              <label for="kampus">Alamat Pengantaran <span class="req">*</span></label>
+              <input type="text" id="kampus" placeholder="Cth. Jl. Merdeka No.10 / UNM Gunungsari" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">✨ Lihat Preview & Kirim</button>
+
+        <div class="pay-note">
+          <b>🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.</b>
+          <span class="rek-row">No. Rek BNI: <span class="rek">2010999640</span>
+            <button type="button" class="copy-rek-btn" data-copy="2010999640">📋 Salin</button></span><br>
+          a.n <b>ST MAJIDAH</b>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ PAGE: SELEMPANG ============ -->
+  <section class="page" id="page-selempang">
+    <button type="button" class="back-btn" data-go="page-home">← Menu Utama</button>
+    <div class="page-hero">
+      <h1>Selempang <em>Wisuda</em></h1>
+      <p>Selempang custom sesuai request — bisa dipaket bareng papan ucapan.</p>
+    </div>
+
+    <form class="grid" id="selempangForm">
+      <div class="card form-col">
+
+        <fieldset>
+          <legend>📦 Jenis & Jadwal</legend>
+          <div class="field">
+            <label>Jenis Selempang <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="slMode" value="biasa" data-harga="0" checked>
+                <span class="txt"><strong>Selempang Biasa</strong><span>Satu sisi</span></span><span class="price">Mulai Rp70.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="slMode" value="timbal" data-harga="0">
+                <span class="txt"><strong>Selempang Timbal Balik</strong><span>Dua sisi, bisa dipakai bolak-balik</span></span><span class="price">Mulai Rp140.000</span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label class="pkg"><input type="checkbox" id="slPapanToggle" name="slPapanToggle" value="ya" data-harga="50000">
+              <span class="txt"><strong>➕ Tambah Papan Ucapan</strong><span>Bundling papan ucapan akrilik, tambahan Rp50.000</span></span><span class="price">+Rp50.000</span>
+            </label>
+          </div>
+          <div class="field">
+            <label for="slTanggal">Tanggal Pengambilan <span class="req">*</span></label>
+            <input type="date" id="slTanggal" required>
+          </div>
+          <div class="field">
+            <label for="slLokasi">Alamat Pengantaran <span class="req">*</span></label>
+            <input type="text" id="slLokasi" placeholder="Cth. Jl. Merdeka No.10 / UNM Gunungsari" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🧑‍🎓 Data Diri</legend>
+          <div class="field">
+            <label for="slNama">Nama Lengkap + Title <span class="req">*</span></label>
+            <input type="text" id="slNama" placeholder="Cth. Nadia Putri, S.Kom" required>
+          </div>
+          <div class="grid-2">
+            <div class="field">
+              <label for="slJurusan">Jurusan <span class="req">*</span></label>
+              <input type="text" id="slJurusan" placeholder="Cth. Sistem Informasi" required>
+            </div>
+            <div class="field">
+              <label for="slUniversitas">Universitas <span class="req">*</span></label>
+              <input type="text" id="slUniversitas" placeholder="Cth. Universitas Negeri Makassar" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="slDetailBiasa">
+          <legend>🎗️ Detail Selempang</legend>
+          <div class="field">
+            <label>Warna Selempang <span class="req">*</span></label>
+            <div class="swatch-row">
+              <label class="swatch"><input type="radio" name="warna" value="Maroon" checked><span class="dot" style="background:#7a1f2b"></span>Maroon</label>
+              <label class="swatch"><input type="radio" name="warna" value="Navy"><span class="dot" style="background:#1f3a5f"></span>Navy</label>
+              <label class="swatch"><input type="radio" name="warna" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+              <label class="swatch"><input type="radio" name="warna" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Jenis Pinggiran <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="pinggiran" value="Polos" data-harga="70000" checked>
+                <span class="txt"><strong>Polos</strong></span><span class="price">Rp70.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="pinggiran" value="Pita" data-harga="80000">
+                <span class="txt"><strong>Pita</strong></span><span class="price">Rp80.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="pinggiran" value="Renda" data-harga="80000">
+                <span class="txt"><strong>Renda</strong></span><span class="price">Rp80.000</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Model Leher <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="leher" value="Biasa" data-harga="0" checked>
+                <span class="txt"><strong>Biasa</strong></span><span class="price">Gratis</span>
+              </label>
+              <label class="pkg"><input type="radio" name="leher" value="Potong" data-harga="10000">
+                <span class="txt"><strong>Potong</strong></span><span class="price">+Rp10.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="leher" value="Bentuk M" data-harga="20000">
+                <span class="txt"><strong>Bentuk M</strong></span><span class="price">+Rp20.000</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Hiasan Nama</label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="hiasan" value="Tidak Ada" data-harga="0" checked>
+                <span class="txt"><strong>Tidak Ada</strong></span><span class="price">Gratis</span>
+              </label>
+              <label class="pkg"><input type="radio" name="hiasan" value="Mahkota" data-harga="5000">
+                <span class="txt"><strong>Mahkota</strong></span><span class="price">+Rp5.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="hiasan" value="Toga" data-harga="5000">
+                <span class="txt"><strong>Toga</strong></span><span class="price">+Rp5.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="hiasan" value="Logo Request" data-harga="5000">
+                <span class="txt"><strong>Logo Request</strong></span><span class="price">+Rp5.000</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Tambahan Lapisan</label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="lapisan" value="Tidak" data-harga="0" checked>
+                <span class="txt"><strong>Tidak</strong></span><span class="price">Gratis</span>
+              </label>
+              <label class="pkg"><input type="radio" name="lapisan" value="Iya" data-harga="20000">
+                <span class="txt"><strong>Iya</strong></span><span class="price">+Rp20.000</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Tambahan Batik Ujung</label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="batik" value="Tidak" data-harga="0" checked>
+                <span class="txt"><strong>Tidak</strong></span><span class="price">Gratis</span>
+              </label>
+              <label class="pkg"><input type="radio" name="batik" value="Iya" data-harga="10000">
+                <span class="txt"><strong>Iya</strong></span><span class="price">+Rp10.000</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Panjang Selempang <span class="req">*</span></label>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="panjang" value="150 cm" checked>150 cm</label>
+              <label class="pill"><input type="radio" name="panjang" value="160 cm">160 cm</label>
+              <label class="pill"><input type="radio" name="panjang" value="170 cm">170 cm</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Warna Tulisan <span class="req">*</span></label>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="tulisan" value="Gold" checked>Gold</label>
+              <label class="pill"><input type="radio" name="tulisan" value="Silver">Silver</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Warna Logo <span class="req">*</span></label>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="logoWarna" value="Asli" checked>Asli</label>
+              <label class="pill"><input type="radio" name="logoWarna" value="Sesuai Tulisan">Sesuai Tulisan</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Bagian Tengah Selempang <span class="req">*</span></label>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="tengah" value="Garis 3" checked>Garis 3</label>
+              <label class="pill"><input type="radio" name="tengah" value="Cumlaude">Cumlaude</label>
+              <label class="pill"><input type="radio" name="tengah" value="Nama Fakultas">Nama Fakultas</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="slDetailTimbal" class="hidden">
+          <legend>🎗️ Detail Selempang Timbal Balik</legend>
+
+          <div class="addon-box">
+            <div class="addon-title">1️⃣ Sisi 1</div>
+            <div class="field">
+              <label>Warna Selempang <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="warna1" value="Maroon" checked><span class="dot" style="background:#7a1f2b"></span>Maroon</label>
+                <label class="swatch"><input type="radio" name="warna1" value="Navy"><span class="dot" style="background:#1f3a5f"></span>Navy</label>
+                <label class="swatch"><input type="radio" name="warna1" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="warna1" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Jenis Pinggiran <span class="req">*</span></label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="pinggiran1" value="Polos" data-harga="70000" checked>
+                  <span class="txt"><strong>Polos</strong></span><span class="price">Rp70.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="pinggiran1" value="Pita" data-harga="80000">
+                  <span class="txt"><strong>Pita</strong></span><span class="price">Rp80.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="pinggiran1" value="Renda" data-harga="80000">
+                  <span class="txt"><strong>Renda</strong></span><span class="price">Rp80.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Model Leher <span class="req">*</span></label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="leher1" value="Biasa" data-harga="0" checked>
+                  <span class="txt"><strong>Biasa</strong></span><span class="price">Gratis</span>
+                </label>
+                <label class="pkg"><input type="radio" name="leher1" value="Potong" data-harga="10000">
+                  <span class="txt"><strong>Potong</strong></span><span class="price">+Rp10.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="leher1" value="Bentuk M" data-harga="20000">
+                  <span class="txt"><strong>Bentuk M</strong></span><span class="price">+Rp20.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Hiasan Nama</label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="hiasan1" value="Tidak Ada" data-harga="0" checked>
+                  <span class="txt"><strong>Tidak Ada</strong></span><span class="price">Gratis</span>
+                </label>
+                <label class="pkg"><input type="radio" name="hiasan1" value="Mahkota" data-harga="5000">
+                  <span class="txt"><strong>Mahkota</strong></span><span class="price">+Rp5.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="hiasan1" value="Toga" data-harga="5000">
+                  <span class="txt"><strong>Toga</strong></span><span class="price">+Rp5.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="hiasan1" value="Logo Request" data-harga="5000">
+                  <span class="txt"><strong>Logo Request</strong></span><span class="price">+Rp5.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Tambahan Batik Ujung</label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="batik1" value="Tidak" data-harga="0" checked>
+                  <span class="txt"><strong>Tidak</strong></span><span class="price">Gratis</span>
+                </label>
+                <label class="pkg"><input type="radio" name="batik1" value="Iya" data-harga="10000">
+                  <span class="txt"><strong>Iya</strong></span><span class="price">+Rp10.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Panjang Selempang <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="panjang1" value="150 cm" checked>150 cm</label>
+                <label class="pill"><input type="radio" name="panjang1" value="160 cm">160 cm</label>
+                <label class="pill"><input type="radio" name="panjang1" value="170 cm">170 cm</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Tulisan <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="tulisan1" value="Gold" checked>Gold</label>
+                <label class="pill"><input type="radio" name="tulisan1" value="Silver">Silver</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Logo <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="logoWarna1" value="Asli" checked>Asli</label>
+                <label class="pill"><input type="radio" name="logoWarna1" value="Sesuai Tulisan">Sesuai Tulisan</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bagian Tengah Selempang <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="tengah1" value="Garis 3" checked>Garis 3</label>
+                <label class="pill"><input type="radio" name="tengah1" value="Cumlaude">Cumlaude</label>
+                <label class="pill"><input type="radio" name="tengah1" value="Nama Fakultas">Nama Fakultas</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="addon-box" style="margin-top:14px;">
+            <div class="addon-title">2️⃣ Sisi 2</div>
+            <div class="field">
+              <label>Warna Selempang <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="warna2" value="Maroon" checked><span class="dot" style="background:#7a1f2b"></span>Maroon</label>
+                <label class="swatch"><input type="radio" name="warna2" value="Navy"><span class="dot" style="background:#1f3a5f"></span>Navy</label>
+                <label class="swatch"><input type="radio" name="warna2" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="warna2" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Jenis Pinggiran <span class="req">*</span></label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="pinggiran2" value="Polos" data-harga="70000" checked>
+                  <span class="txt"><strong>Polos</strong></span><span class="price">Rp70.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="pinggiran2" value="Pita" data-harga="80000">
+                  <span class="txt"><strong>Pita</strong></span><span class="price">Rp80.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="pinggiran2" value="Renda" data-harga="80000">
+                  <span class="txt"><strong>Renda</strong></span><span class="price">Rp80.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Model Leher <span class="req">*</span></label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="leher2" value="Biasa" data-harga="0" checked>
+                  <span class="txt"><strong>Biasa</strong></span><span class="price">Gratis</span>
+                </label>
+                <label class="pkg"><input type="radio" name="leher2" value="Potong" data-harga="10000">
+                  <span class="txt"><strong>Potong</strong></span><span class="price">+Rp10.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="leher2" value="Bentuk M" data-harga="20000">
+                  <span class="txt"><strong>Bentuk M</strong></span><span class="price">+Rp20.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Hiasan Nama</label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="hiasan2" value="Tidak Ada" data-harga="0" checked>
+                  <span class="txt"><strong>Tidak Ada</strong></span><span class="price">Gratis</span>
+                </label>
+                <label class="pkg"><input type="radio" name="hiasan2" value="Mahkota" data-harga="5000">
+                  <span class="txt"><strong>Mahkota</strong></span><span class="price">+Rp5.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="hiasan2" value="Toga" data-harga="5000">
+                  <span class="txt"><strong>Toga</strong></span><span class="price">+Rp5.000</span>
+                </label>
+                <label class="pkg"><input type="radio" name="hiasan2" value="Logo Request" data-harga="5000">
+                  <span class="txt"><strong>Logo Request</strong></span><span class="price">+Rp5.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Tambahan Batik Ujung</label>
+              <div class="pkg-row">
+                <label class="pkg"><input type="radio" name="batik2" value="Tidak" data-harga="0" checked>
+                  <span class="txt"><strong>Tidak</strong></span><span class="price">Gratis</span>
+                </label>
+                <label class="pkg"><input type="radio" name="batik2" value="Iya" data-harga="10000">
+                  <span class="txt"><strong>Iya</strong></span><span class="price">+Rp10.000</span>
+                </label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Panjang Selempang <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="panjang2" value="150 cm" checked>150 cm</label>
+                <label class="pill"><input type="radio" name="panjang2" value="160 cm">160 cm</label>
+                <label class="pill"><input type="radio" name="panjang2" value="170 cm">170 cm</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Tulisan <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="tulisan2" value="Gold" checked>Gold</label>
+                <label class="pill"><input type="radio" name="tulisan2" value="Silver">Silver</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Logo <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="logoWarna2" value="Asli" checked>Asli</label>
+                <label class="pill"><input type="radio" name="logoWarna2" value="Sesuai Tulisan">Sesuai Tulisan</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bagian Tengah Selempang <span class="req">*</span></label>
+              <div class="pill-row">
+                <label class="pill"><input type="radio" name="tengah2" value="Garis 3" checked>Garis 3</label>
+                <label class="pill"><input type="radio" name="tengah2" value="Cumlaude">Cumlaude</label>
+                <label class="pill"><input type="radio" name="tengah2" value="Nama Fakultas">Nama Fakultas</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="slAddon" class="hidden">
+          <div class="addon-box">
+            <div class="addon-title">💌 Papan Ucapan Tambahan</div>
+            <div class="field">
+              <label for="slPapanAtas">Ucapan Atas <span class="req">*</span></label>
+              <input type="text" id="slPapanAtas" data-req placeholder="Cth. Congratulation" maxlength="40">
+            </div>
+            <div class="field">
+              <label for="slPapanPenerima">Nama Penerima <span class="req">*</span></label>
+              <input type="text" id="slPapanPenerima" data-req placeholder="Cth. Nadia Putri">
+            </div>
+            <div class="field">
+              <label for="slPapanBawah">Ucapan Bawah <span class="opt">(opsional)</span></label>
+              <textarea id="slPapanBawah" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="slPapanFrom">From <span class="req">*</span></label>
+              <input type="text" id="slPapanFrom" data-req placeholder="Cth. Keluarga Besar">
+            </div>
+            <div class="field">
+              <label>Warna Bunga <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="slPapanBunga" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+                <label class="swatch"><input type="radio" name="slPapanBunga" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+                <label class="swatch"><input type="radio" name="slPapanBunga" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+                <label class="swatch"><input type="radio" name="slPapanBunga" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bentuk Papan <span class="req">*</span></label>
+              <div class="shape-row">
+                <label class="shape-btn" data-shape="bulat"><input type="radio" name="slPapanBentuk" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+                <label class="shape-btn" data-shape="kubah"><input type="radio" name="slPapanBentuk" value="Kubah"><span class="glyph"></span>Kubah</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Papan <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="slPapanWarna" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+                <label class="swatch"><input type="radio" name="slPapanWarna" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="slPapanWarna" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">✨ Lihat Ringkasan & Kirim</button>
+
+        <div class="pay-note">
+          <b>🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.</b>
+          <span class="rek-row">No. Rek BNI: <span class="rek">2010999640</span>
+            <button type="button" class="copy-rek-btn" data-copy="2010999640">📋 Salin</button></span><br>
+          a.n <b>ST MAJIDAH</b>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ PAGE: BUKET BUNGA ============ -->
+  <section class="page" id="page-buket">
+    <button type="button" class="back-btn" data-go="page-home">← Menu Utama</button>
+    <div class="page-hero">
+      <h1>Buket <em>Bunga</em></h1>
+      <p>Buket cantik untuk wisuda & momen spesial — bisa dipaket bareng papan ucapan.</p>
+    </div>
+
+    <form class="grid" id="buketForm">
+      <div class="card form-col">
+
+        <fieldset>
+          <legend>📦 Paket & Jadwal</legend>
+          <div class="field">
+            <label>Pilihan Paket <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="bkMode" value="saja" data-harga="0" checked>
+                <span class="txt"><strong>Buket Saja</strong></span><span class="price">—</span>
+              </label>
+              <label class="pkg"><input type="radio" name="bkMode" value="paket" data-harga="50000">
+                <span class="txt"><strong>Paket + Papan Ucapan</strong><span>Harga papan tambahan Rp50.000</span></span><span class="price">+Rp50.000</span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="bkTanggal">Tanggal Pengambilan <span class="req">*</span></label>
+            <input type="date" id="bkTanggal" required>
+          </div>
+          <div class="field">
+            <label for="bkLokasi">Alamat Pengantaran <span class="req">*</span></label>
+            <input type="text" id="bkLokasi" placeholder="Cth. Jl. Merdeka No.10 / UNM Gunungsari" required>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>💐 Pilih Buket</legend>
+          <div class="field">
+            <label>Ukuran <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="ukuran" value="Small" data-harga="50000" checked>
+                <span class="txt"><strong>Small</strong></span><span class="price">Rp50.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="ukuran" value="Medium" data-harga="75000">
+                <span class="txt"><strong>Medium</strong></span><span class="price">Rp75.000</span>
+              </label>
+              <label class="pkg"><input type="radio" name="ukuran" value="Large" data-harga="100000">
+                <span class="txt"><strong>Large</strong></span><span class="price">Rp100.000</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="bkWarna">Warna Buket <span class="req">*</span></label>
+            <input type="text" id="bkWarna" placeholder="Cth. Merah muda & putih" required>
+          </div>
+
+        </fieldset>
+
+        <fieldset id="bkAddon" class="hidden">
+          <div class="addon-box">
+            <div class="addon-title">💌 Papan Ucapan Tambahan</div>
+            <div class="field">
+              <label for="bkPapanAtas">Ucapan Atas <span class="req">*</span></label>
+              <input type="text" id="bkPapanAtas" data-req placeholder="Cth. Congratulation" maxlength="40">
+            </div>
+            <div class="field">
+              <label for="bkPapanPenerima">Nama Penerima <span class="req">*</span></label>
+              <input type="text" id="bkPapanPenerima" data-req placeholder="Cth. Nadia Putri">
+            </div>
+            <div class="field">
+              <label for="bkPapanBawah">Ucapan Bawah <span class="opt">(opsional)</span></label>
+              <textarea id="bkPapanBawah" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="bkPapanFrom">From <span class="req">*</span></label>
+              <input type="text" id="bkPapanFrom" data-req placeholder="Cth. Keluarga Besar">
+            </div>
+            <div class="field">
+              <label>Warna Bunga (Papan) <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="bkPapanBunga" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+                <label class="swatch"><input type="radio" name="bkPapanBunga" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+                <label class="swatch"><input type="radio" name="bkPapanBunga" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+                <label class="swatch"><input type="radio" name="bkPapanBunga" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bentuk Papan <span class="req">*</span></label>
+              <div class="shape-row">
+                <label class="shape-btn" data-shape="bulat"><input type="radio" name="bkPapanBentuk" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+                <label class="shape-btn" data-shape="kubah"><input type="radio" name="bkPapanBentuk" value="Kubah"><span class="glyph"></span>Kubah</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Papan <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="bkPapanWarna" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+                <label class="swatch"><input type="radio" name="bkPapanWarna" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="bkPapanWarna" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">✨ Lihat Ringkasan & Kirim</button>
+
+        <div class="pay-note">
+          <b>🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.</b>
+          <span class="rek-row">No. Rek BNI: <span class="rek">2010999640</span>
+            <button type="button" class="copy-rek-btn" data-copy="2010999640">📋 Salin</button></span><br>
+          a.n <b>ST MAJIDAH</b>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ PAGE: BANNER CUSTOM ============ -->
+  <section class="page" id="page-banner">
+    <button type="button" class="back-btn" data-go="page-home">← Menu Utama</button>
+    <div class="page-hero">
+      <h1>Banner <em>Custom</em></h1>
+      <p>Spanduk / backdrop ucapan custom untuk dekorasi wisuda, ulang tahun, atau momen spesial lainnya.</p>
+    </div>
+
+    <form class="grid" id="bannerForm">
+      <div class="card form-col">
+
+        <fieldset>
+          <legend>📦 Paket Tambahan</legend>
+          <div class="field">
+            <label>Pilihan Paket <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="bnMode" value="saja" data-harga="0" checked>
+                <span class="txt"><strong>Banner Saja</strong></span><span class="price">—</span>
+              </label>
+              <label class="pkg"><input type="radio" name="bnMode" value="paket" data-harga="50000">
+                <span class="txt"><strong>Paket + Papan Ucapan</strong><span>Harga papan tambahan Rp50.000</span></span><span class="price">+Rp50.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>📏 Ukuran Banner</legend>
+          <div class="field">
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="bnUkuran" value="60 x 160 cm" data-harga="120000" checked>
+                <span class="txt"><strong>60 x 160 cm</strong></span>
+                <span class="price">Rp120.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="bnAddon" class="hidden">
+          <div class="addon-box">
+            <div class="addon-title">💌 Papan Ucapan Tambahan</div>
+            <div class="field">
+              <label for="bnPapanAtas">Ucapan Atas <span class="req">*</span></label>
+              <input type="text" id="bnPapanAtas" data-req placeholder="Cth. Congratulation" maxlength="40">
+            </div>
+            <div class="field">
+              <label for="bnPapanPenerima">Nama Penerima <span class="req">*</span></label>
+              <input type="text" id="bnPapanPenerima" data-req placeholder="Cth. Nadia Putri">
+            </div>
+            <div class="field">
+              <label for="bnPapanBawah">Ucapan Bawah <span class="opt">(opsional)</span></label>
+              <textarea id="bnPapanBawah" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="bnPapanFrom">From <span class="req">*</span></label>
+              <input type="text" id="bnPapanFrom" data-req placeholder="Cth. Keluarga Besar">
+            </div>
+            <div class="field">
+              <label>Warna Bunga (Papan) <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="bnPapanBunga" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+                <label class="swatch"><input type="radio" name="bnPapanBunga" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+                <label class="swatch"><input type="radio" name="bnPapanBunga" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+                <label class="swatch"><input type="radio" name="bnPapanBunga" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bentuk Papan <span class="req">*</span></label>
+              <div class="shape-row">
+                <label class="shape-btn" data-shape="bulat"><input type="radio" name="bnPapanBentuk" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+                <label class="shape-btn" data-shape="kubah"><input type="radio" name="bnPapanBentuk" value="Kubah"><span class="glyph"></span>Kubah</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Papan <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="bnPapanWarna" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+                <label class="swatch"><input type="radio" name="bnPapanWarna" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="bnPapanWarna" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🗓️ Jadwal Pengambilan</legend>
+          <div class="grid-2">
+            <div class="field">
+              <label for="bnTanggal">Tanggal Pengambilan <span class="req">*</span></label>
+              <input type="date" id="bnTanggal" required>
+            </div>
+            <div class="field">
+              <label for="bnLokasi">Alamat Pengantaran <span class="req">*</span></label>
+              <input type="text" id="bnLokasi" placeholder="Cth. Jl. Merdeka No.10 / UNM Gunungsari" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">✨ Lihat Ringkasan & Kirim</button>
+
+        <div class="pay-note">
+          <b>🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.</b>
+          <span class="rek-row">No. Rek BNI: <span class="rek">2010999640</span>
+            <button type="button" class="copy-rek-btn" data-copy="2010999640">📋 Salin</button></span><br>
+          a.n <b>ST MAJIDAH</b>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ PAGE: PLAKAT CUSTOM ============ -->
+  <section class="page" id="page-plakat">
+    <button type="button" class="back-btn" data-go="page-home">← Menu Utama</button>
+    <div class="page-hero">
+      <h1>Plakat <em>Custom</em></h1>
+      <p>Plakat penghargaan akrilik atau kayu, custom teks sesuai acara kamu.</p>
+    </div>
+
+    <form class="grid" id="plakatForm">
+      <div class="card form-col">
+
+        <fieldset>
+          <legend>💌 Paket Tambahan</legend>
+          <div class="field">
+            <label>Pilihan Paket <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="pkMode" value="saja" data-harga="0" checked>
+                <span class="txt"><strong>Plakat Saja</strong></span><span class="price">—</span>
+              </label>
+              <label class="pkg"><input type="radio" name="pkMode" value="paket" data-harga="50000">
+                <span class="txt"><strong>Paket + Papan Ucapan</strong><span>Harga papan tambahan Rp50.000</span></span><span class="price">+Rp50.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>📦 Bahan & Ukuran</legend>
+          <div class="field">
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="pkJenis" value="Akrilik Bening 15x20cm" data-harga="90000" checked>
+                <span class="txt"><strong>Akrilik Bening 15x20cm</strong></span><span class="price">Rp90.000</span>
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Kemasan Box <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="pkBox" value="Tanpa Box" data-harga="0" checked>
+                <span class="txt"><strong>Tanpa Box</strong></span><span class="price">Gratis</span>
+              </label>
+              <label class="pkg"><input type="radio" name="pkBox" value="Dengan Box" data-harga="60000">
+                <span class="txt"><strong>Dengan Box</strong><span>Total jadi Rp150.000</span></span><span class="price">+Rp60.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="pkAddon" class="hidden">
+          <div class="addon-box">
+            <div class="addon-title">💌 Papan Ucapan Tambahan</div>
+            <div class="field">
+              <label for="pkPapanAtas">Ucapan Atas <span class="req">*</span></label>
+              <input type="text" id="pkPapanAtas" data-req placeholder="Cth. Congratulation" maxlength="40">
+            </div>
+            <div class="field">
+              <label for="pkPapanPenerima">Nama Penerima <span class="req">*</span></label>
+              <input type="text" id="pkPapanPenerima" data-req placeholder="Cth. Nadia Putri">
+            </div>
+            <div class="field">
+              <label for="pkPapanBawah">Ucapan Bawah <span class="opt">(opsional)</span></label>
+              <textarea id="pkPapanBawah" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="pkPapanFrom">From <span class="req">*</span></label>
+              <input type="text" id="pkPapanFrom" data-req placeholder="Cth. Keluarga Besar">
+            </div>
+            <div class="field">
+              <label>Warna Bunga (Papan) <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="pkPapanBunga" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+                <label class="swatch"><input type="radio" name="pkPapanBunga" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+                <label class="swatch"><input type="radio" name="pkPapanBunga" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+                <label class="swatch"><input type="radio" name="pkPapanBunga" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bentuk Papan <span class="req">*</span></label>
+              <div class="shape-row">
+                <label class="shape-btn" data-shape="bulat"><input type="radio" name="pkPapanBentuk" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+                <label class="shape-btn" data-shape="kubah"><input type="radio" name="pkPapanBentuk" value="Kubah"><span class="glyph"></span>Kubah</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Papan <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="pkPapanWarna" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+                <label class="swatch"><input type="radio" name="pkPapanWarna" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="pkPapanWarna" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🗓️ Jadwal Pengambilan</legend>
+          <div class="grid-2">
+            <div class="field">
+              <label for="pkTanggal">Tanggal Pengambilan <span class="req">*</span></label>
+              <input type="date" id="pkTanggal" required>
+            </div>
+            <div class="field">
+              <label for="pkLokasi">Alamat Pengantaran <span class="req">*</span></label>
+              <input type="text" id="pkLokasi" placeholder="Cth. Jl. Merdeka No.10 / UNM Gunungsari" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">✨ Lihat Ringkasan & Kirim</button>
+
+        <div class="pay-note">
+          <b>🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.</b>
+          <span class="rek-row">No. Rek BNI: <span class="rek">2010999640</span>
+            <button type="button" class="copy-rek-btn" data-copy="2010999640">📋 Salin</button></span><br>
+          a.n <b>ST MAJIDAH</b>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <!-- ============ PAGE: FIGURA & BINGKAI ============ -->
+  <section class="page" id="page-figura">
+    <button type="button" class="back-btn" data-go="page-home">← Menu Utama</button>
+    <div class="page-hero">
+      <h1>Figura & <em>Bingkai</em></h1>
+      <p>Bingkai foto custom untuk kenang-kenangan, hadiah, atau dekorasi kamar.</p>
+    </div>
+
+    <form class="grid" id="figuraForm">
+      <div class="card form-col">
+
+        <fieldset>
+          <legend>💌 Paket Tambahan</legend>
+          <div class="field">
+            <label>Pilihan Paket <span class="req">*</span></label>
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="fgMode" value="saja" data-harga="0" checked>
+                <span class="txt"><strong>Figura Saja</strong></span><span class="price">—</span>
+              </label>
+              <label class="pkg"><input type="radio" name="fgMode" value="paket" data-harga="50000">
+                <span class="txt"><strong>Paket + Papan Ucapan</strong><span>Harga papan tambahan Rp50.000</span></span><span class="price">+Rp50.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>📏 Ukuran Bingkai</legend>
+          <div class="field">
+            <div class="pkg-row">
+              <label class="pkg"><input type="radio" name="fgUkuran" value="8R (20x25cm)" data-harga="60000" checked>
+                <span class="txt"><strong>8R (20x25cm)</strong></span><span class="price">Rp60.000</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🖼️ Detail Bingkai</legend>
+          <div class="field">
+            <label>Warna Bingkai <span class="req">*</span></label>
+            <div class="pill-row">
+              <label class="pill"><input type="radio" name="fgJenis" value="Putih" checked>Putih</label>
+              <label class="pill"><input type="radio" name="fgJenis" value="Hitam">Hitam</label>
+              <label class="pill"><input type="radio" name="fgJenis" value="Kayu">Kayu</label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="fgUcapan">Tambahan Ucapan di Bingkai <span class="opt">(opsional)</span></label>
+            <input type="text" id="fgUcapan" placeholder="Cth. Wisuda 2026" maxlength="40">
+          </div>
+          <div class="field">
+            <label>Info Pengiriman Foto</label>
+            <div class="pay-note" style="margin-top:0;">
+              <b>📷 Foto dikirim langsung via WhatsApp</b>
+              Setelah pesanan ini terkirim, silakan kirim foto yang mau dicetak langsung di chat WhatsApp ya — biar hasilnya tetap tajam dan sesuai aslinya.
+            </div>
+            <div class="field" style="margin-top:12px;">
+              <label for="fgFotoCatatan">Catatan Foto <span class="opt">(opsional)</span></label>
+              <textarea id="fgFotoCatatan" placeholder="Cth. crop bagian tengah aja / edit lebih cerah" rows="2"></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset id="fgAddon" class="hidden">
+          <div class="addon-box">
+            <div class="addon-title">💌 Papan Ucapan Tambahan</div>
+            <div class="field">
+              <label for="fgPapanAtas">Ucapan Atas <span class="req">*</span></label>
+              <input type="text" id="fgPapanAtas" data-req placeholder="Cth. Congratulation" maxlength="40">
+            </div>
+            <div class="field">
+              <label for="fgPapanPenerima">Nama Penerima <span class="req">*</span></label>
+              <input type="text" id="fgPapanPenerima" data-req placeholder="Cth. Nadia Putri">
+            </div>
+            <div class="field">
+              <label for="fgPapanBawah">Ucapan Bawah <span class="opt">(opsional)</span></label>
+              <textarea id="fgPapanBawah" placeholder="Cth. Selamat atas gelarnya" maxlength="80" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="fgPapanFrom">From <span class="req">*</span></label>
+              <input type="text" id="fgPapanFrom" data-req placeholder="Cth. Keluarga Besar">
+            </div>
+            <div class="field">
+              <label>Warna Bunga (Papan) <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="fgPapanBunga" value="Merah" checked><span class="dot" style="background:#e5484d"></span>Merah</label>
+                <label class="swatch"><input type="radio" name="fgPapanBunga" value="Pink"><span class="dot" style="background:#ff8fc7"></span>Pink</label>
+                <label class="swatch"><input type="radio" name="fgPapanBunga" value="Biru"><span class="dot" style="background:#5b9dff"></span>Biru</label>
+                <label class="swatch"><input type="radio" name="fgPapanBunga" value="Putih"><span class="dot" style="background:#ffffff"></span>Putih</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Bentuk Papan <span class="req">*</span></label>
+              <div class="shape-row">
+                <label class="shape-btn" data-shape="bulat"><input type="radio" name="fgPapanBentuk" value="Bulat" checked><span class="glyph"></span>Bulat</label>
+                <label class="shape-btn" data-shape="kubah"><input type="radio" name="fgPapanBentuk" value="Kubah"><span class="glyph"></span>Kubah</label>
+              </div>
+            </div>
+            <div class="field">
+              <label>Warna Papan <span class="req">*</span></label>
+              <div class="swatch-row">
+                <label class="swatch"><input type="radio" name="fgPapanWarna" value="Putih" checked><span class="dot" style="background:#ffffff"></span>Putih</label>
+                <label class="swatch"><input type="radio" name="fgPapanWarna" value="Hitam"><span class="dot" style="background:#2c2230"></span>Hitam</label>
+                <label class="swatch"><input type="radio" name="fgPapanWarna" value="Pink"><span class="dot" style="background:#ffd7ec"></span>Pink</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>🗓️ Jadwal Pengambilan</legend>
+          <div class="grid-2">
+            <div class="field">
+              <label for="fgTanggal">Tanggal Pengambilan <span class="req">*</span></label>
+              <input type="date" id="fgTanggal" required>
+            </div>
+            <div class="field">
+              <label for="fgLokasi">Alamat Pengantaran <span class="req">*</span></label>
+              <input type="text" id="fgLokasi" placeholder="Cth. Jl. Merdeka No.10 / UNM Gunungsari" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="submit-btn">✨ Lihat Ringkasan & Kirim</button>
+
+        <div class="pay-note">
+          <b>🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.</b>
+          <span class="rek-row">No. Rek BNI: <span class="rek">2010999640</span>
+            <button type="button" class="copy-rek-btn" data-copy="2010999640">📋 Salin</button></span><br>
+          a.n <b>ST MAJIDAH</b>
+        </div>
+      </div>
+    </form>
+  </section>
+
+  <footer>Cenning Craft <span class="heart">♦</span> Hadiah custom premium, dibuat dengan detail dan hati — untuk momen yang layak dikenang</footer>
+</div>
+
+<div class="fab-group">
+  <a class="fab-catalog" id="fabCatalog" href="https://wa.me/c/6281958370151" target="_blank" rel="noopener" aria-label="Lihat Katalog WhatsApp">
+    <span>📖</span><span class="fab-label">Katalog</span>
+  </a>
+  <button type="button" class="fab-wa" id="fabWa" aria-label="Chat WhatsApp">
+    <span>💬</span><span class="fab-label">Chat Kami</span>
+  </button>
+</div>
+<div class="toast" id="toast"></div>
+
+<!-- ============ MODAL: PAPAN ============ -->
+<div class="modal-overlay" id="previewModalPapan">
+  <div class="modal-sheet">
+    <h3>✨ Preview Papan Kamu</h3>
+    <p class="modal-sub">Cek dulu sebelum dikirim ya</p>
+
+    <div class="board-stage">
+      <div class="flowers" id="flowerPreview">
+        <div class="flower-shape"></div><div class="flower-shape"></div><div class="flower-shape"></div>
+      </div>
+      <div class="board shape-bulat color-putih" id="boardPreview">
+        <div class="ucapan-atas" id="pvAtas">Congratulation</div>
+        <div class="ucapan-untuk" id="pvUntuk">Untuk: Nama Penerima</div>
+        <div class="ucapan-bawah" id="pvBawah">Selamat atas gelarnya</div>
+        <div class="from" id="pvFrom">From: —</div>
+      </div>
+    </div>
+
+    <div id="boardStage2Wrap" class="hidden">
+      <div class="board-label">Papan 2</div>
+      <div class="board-stage">
+        <div class="flowers" id="flowerPreview2">
+          <div class="flower-shape"></div><div class="flower-shape"></div><div class="flower-shape"></div>
+        </div>
+        <div class="board shape-bulat color-putih" id="boardPreview2">
+          <div class="ucapan-atas" id="pvAtas2">Congratulation</div>
+          <div class="ucapan-untuk" id="pvUntuk2">Untuk: Nama Penerima</div>
+          <div class="ucapan-bawah" id="pvBawah2">Selamat atas gelarnya</div>
+          <div class="from" id="pvFrom2">From: —</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div class="row"><span>Jumlah</span><span id="sumJumlah">1 Papan</span></div>
+      <div class="total">
+        <span>Total Harga</span>
+        <span class="price-tag" id="sumTotal">Rp70.000</span>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" data-close="previewModalPapan">✏️ Edit Lagi</button>
+      <button type="button" class="btn-send" id="btnSendPapan">📲 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: SELEMPANG ============ -->
+<div class="modal-overlay" id="previewModalSelempang">
+  <div class="modal-sheet">
+    <h3>✨ Ringkasan Pesanan Selempang</h3>
+    <p class="modal-sub">Cek dulu sebelum dikirim ya</p>
+    <div class="summary" id="slSummaryBody"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" data-close="previewModalSelempang">✏️ Edit Lagi</button>
+      <button type="button" class="btn-send" id="btnSendSelempang">📲 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: BUKET ============ -->
+<div class="modal-overlay" id="previewModalBuket">
+  <div class="modal-sheet">
+    <h3>✨ Ringkasan Pesanan Buket</h3>
+    <p class="modal-sub">Cek dulu sebelum dikirim ya</p>
+    <div class="summary" id="bkSummaryBody"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" data-close="previewModalBuket">✏️ Edit Lagi</button>
+      <button type="button" class="btn-send" id="btnSendBuket">📲 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: BANNER ============ -->
+<div class="modal-overlay" id="previewModalBanner">
+  <div class="modal-sheet">
+    <h3>✨ Ringkasan Pesanan Banner</h3>
+    <p class="modal-sub">Cek dulu sebelum dikirim ya</p>
+    <div class="summary" id="bnSummaryBody"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" data-close="previewModalBanner">✏️ Edit Lagi</button>
+      <button type="button" class="btn-send" id="btnSendBanner">📲 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: PLAKAT ============ -->
+<div class="modal-overlay" id="previewModalPlakat">
+  <div class="modal-sheet">
+    <h3>✨ Ringkasan Pesanan Plakat</h3>
+    <p class="modal-sub">Cek dulu sebelum dikirim ya</p>
+    <div class="summary" id="pkSummaryBody"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" data-close="previewModalPlakat">✏️ Edit Lagi</button>
+      <button type="button" class="btn-send" id="btnSendPlakat">📲 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: FIGURA & BINGKAI ============ -->
+<div class="modal-overlay" id="previewModalFigura">
+  <div class="modal-sheet">
+    <h3>✨ Ringkasan Pesanan Figura & Bingkai</h3>
+    <p class="modal-sub">Cek dulu sebelum dikirim ya</p>
+    <div class="summary" id="fgSummaryBody"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" data-close="previewModalFigura">✏️ Edit Lagi</button>
+      <button type="button" class="btn-send" id="btnSendFigura">📲 Kirim ke WhatsApp</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: KONFIRMASI KELUAR ============ -->
+<div class="modal-overlay" id="exitConfirmModal">
+  <div class="modal-sheet" style="text-align:center;">
+    <h3>👋 Yakin mau keluar?</h3>
+    <p class="modal-sub">Pesanan yang belum dikirim akan hilang jika kamu keluar dari halaman ini.</p>
+    <div class="modal-actions">
+      <button type="button" class="btn-edit" id="exitCancelBtn">Tetap di Sini</button>
+      <button type="button" class="btn-send" id="exitConfirmBtn">Ya, Keluar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: GENERIC OPTION PICKER (POPUP) ============ -->
+<div class="modal-overlay" id="optionPickerModal">
+  <div class="modal-sheet">
+    <div class="picker-modal-head">
+      <h3 id="optionPickerTitle">Pilih</h3>
+      <button type="button" class="picker-close" id="optionPickerClose" aria-label="Tutup">✕</button>
+    </div>
+    <div id="optionPickerBody"></div>
+  </div>
+</div>
+
+<script>
+  const WA_NUMBER = "6281958370151";
+  const REK_TEXT = "No. Rek BNI: 2010999640\na.n ST MAJIDAH";
+
+  /* ---------- router ---------- */
+  function showPage(id, push){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const target = document.getElementById(id);
+    if (target) target.classList.add('active');
+    window.scrollTo(0, 0);
+    if (push !== false){
+      history.pushState({ page: id }, '', location.href);
+    }
+  }
+  document.querySelectorAll('[data-go]').forEach(el => {
+    el.addEventListener('click', () => showPage(el.dataset.go));
+  });
+  document.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', () => {
+      document.getElementById(el.dataset.close).classList.remove('open');
+    });
+  });
+
+  /* ==========================================================
+     CEGAH LANGSUNG KELUAR APLIKASI SAAT TEKAN TOMBOL BACK
+     ATAU SWIPE BACK (khususnya di HP)
+     ========================================================== */
+  let isExiting = false;
+  const exitConfirmModal = document.getElementById('exitConfirmModal');
+
+  // Tandai entry paling awal supaya bisa dibedakan dari halaman dalam app
+  history.replaceState({ page: 'page-home', origin: true }, '', location.href);
+  // Tambahkan 1 entry "penyangga" di atasnya, supaya tombol back / swipe back
+  // pertama kali tidak langsung menutup/keluar dari halaman web ini
+  history.pushState({ page: 'page-home' }, '', location.href);
+
+  window.addEventListener('popstate', function(e){
+    if (isExiting) return; // sudah dikonfirmasi keluar, biarkan browser lanjut
+
+    const state = e.state;
+
+    if (state && state.origin){
+      // Sudah sampai di titik paling awal -> ini percobaan keluar dari app
+      history.pushState({ page: 'page-home' }, '', location.href); // batalkan, tetap di app
+      exitConfirmModal.classList.add('open');
+      return;
+    }
+
+    if (state && state.page){
+      showPage(state.page, false); // tampilkan halaman sesuai riwayat, tanpa push baru
+      return;
+    }
+
+    // fallback: tidak ada state sama sekali -> anggap percobaan keluar
+    history.pushState({ page: 'page-home' }, '', location.href);
+    exitConfirmModal.classList.add('open');
+  });
+
+  document.getElementById('exitCancelBtn').addEventListener('click', function(){
+    exitConfirmModal.classList.remove('open');
+  });
+  document.getElementById('exitConfirmBtn').addEventListener('click', function(){
+    isExiting = true;
+    exitConfirmModal.classList.remove('open');
+    history.back();
+  });
+
+  // Notifikasi tambahan kalau user coba menutup tab / refresh / ganti URL langsung
+  window.addEventListener('beforeunload', function(e){
+    if (isExiting) return;
+    e.preventDefault();
+    e.returnValue = '';
+  });
+
+  /* ---------- helpers ---------- */
+  function getChecked(name){
+    const el = document.querySelector(`input[name="${name}"]:checked`);
+    return el ? el.value : null;
+  }
+  function getHarga(name){
+    const el = document.querySelector(`input[name="${name}"]:checked`);
+    return el ? parseInt(el.dataset.harga || '0', 10) : 0;
+  }
+  function sumHarga(names){
+    return names.reduce((acc, n) => acc + getHarga(n), 0);
+  }
+  function formatRupiah(n){
+    return 'Rp' + n.toLocaleString('id-ID');
+  }
+  function val(id){
+    const el = document.getElementById(id);
+    return el ? el.value.trim() : '';
+  }
+  function formatTanggal(id){
+    const v = val(id);
+    return v ? new Date(v + 'T00:00:00').toLocaleDateString('id-ID', {weekday:'long', day:'numeric', month:'long', year:'numeric'}) : '-';
+  }
+  function summaryRow(label, value){
+    return `<div class="row"><span>${label}</span><span>${value}</span></div>`;
+  }
+  function summarySubhead(label){
+    return `<div class="subhead">${label}</div>`;
+  }
+
+  /* ==========================================================
+     GENERIC OPTION PICKER (semua menu pilihan jadi popup)
+     ========================================================== */
+  const pickerModal = document.getElementById('optionPickerModal');
+  const pickerTitleEl = document.getElementById('optionPickerTitle');
+  const pickerBody = document.getElementById('optionPickerBody');
+  let pickerHomeParent = null;
+  let pickerPlaceholder = null;
+  let pickerOptionsEl = null;
+  let pickerOnUpdate = null;
+
+  function pickerPriceSuffix(input){
+    if (input.dataset.harga === undefined) return '';
+    const h = parseInt(input.dataset.harga, 10);
+    return h ? ` (+${formatRupiah(h)})` : '';
+  }
+  function pickerSwatchColor(optionsEl){
+    const checked = optionsEl.querySelector('input:checked');
+    if (!checked) return null;
+    const dot = checked.closest('.swatch');
+    if (!dot) return null;
+    const dotEl = dot.querySelector('.dot');
+    return dotEl ? dotEl.style.background : null;
+  }
+  function pickerFullLabel(input){
+    const pkg = input.closest('.pkg');
+    if (pkg){
+      const strong = pkg.querySelector('.txt strong');
+      if (strong) return strong.textContent.trim();
+    }
+    return input.value;
+  }
+  function renderTriggerValue(trigger, optionsEl){
+    const checked = optionsEl.querySelector('input:checked');
+    const valueSpan = trigger.querySelector('.picker-value');
+    const color = pickerSwatchColor(optionsEl);
+    const dotHtml = color ? `<span class="picker-dot" style="background:${color}"></span>` : '';
+    valueSpan.innerHTML = dotHtml + '<span>' + (checked ? (pickerFullLabel(checked) + pickerPriceSuffix(checked)) : 'Pilih') + '</span>';
+  }
+
+  function closePicker(){
+    if (pickerHomeParent && pickerPlaceholder && pickerOptionsEl){
+      pickerHomeParent.insertBefore(pickerOptionsEl, pickerPlaceholder);
+      pickerPlaceholder.remove();
+      pickerOptionsEl.style.display = 'none';
+    }
+    pickerModal.classList.remove('open');
+    if (pickerOnUpdate) pickerOnUpdate();
+    pickerHomeParent = null; pickerPlaceholder = null; pickerOptionsEl = null; pickerOnUpdate = null;
+  }
+  document.getElementById('optionPickerClose').addEventListener('click', closePicker);
+  pickerModal.addEventListener('click', (e) => { if (e.target === pickerModal) closePicker(); });
+
+  function openPicker(title, optionsEl, trigger){
+    pickerTitleEl.textContent = title;
+    pickerHomeParent = optionsEl.parentNode;
+    pickerPlaceholder = document.createComment('picker-slot');
+    pickerHomeParent.insertBefore(pickerPlaceholder, optionsEl);
+    pickerOptionsEl = optionsEl;
+    optionsEl.style.display = '';
+    pickerBody.innerHTML = '';
+    pickerBody.appendChild(optionsEl);
+    pickerOnUpdate = () => renderTriggerValue(trigger, optionsEl);
+    function onSelect(){
+      optionsEl.removeEventListener('change', onSelect);
+      optionsEl.removeEventListener('click', onOptionClick);
+      closePicker();
+    }
+    function onOptionClick(e){
+      // Menutup popup walau opsi yang diklik sudah aktif sebelumnya
+      // (klik seperti ini tidak memicu event 'change' bawaan browser).
+      if (e.target.closest('label')) setTimeout(onSelect, 0);
+    }
+    optionsEl.addEventListener('change', onSelect);
+    optionsEl.addEventListener('click', onOptionClick);
+    pickerModal.classList.add('open');
+  }
+
+  function setupPickers(){
+    document.querySelectorAll('.field').forEach(field => {
+      const optionsEl = field.querySelector(':scope > .swatch-row, :scope > .shape-row, :scope > .pill-row, :scope > .pkg-row');
+      if (!optionsEl) return;
+      const labelEl = field.querySelector(':scope > label');
+      let titleText = labelEl ? labelEl.textContent.replace('*','').trim() : '';
+      if (!titleText){
+        const fieldset = field.closest('fieldset');
+        const legend = fieldset ? fieldset.querySelector(':scope > legend') : null;
+        titleText = legend ? legend.textContent.trim() : 'Pilih';
+      }
+
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'picker-trigger';
+      trigger.innerHTML = '<span class="picker-value"></span><span class="picker-chevron">⌄</span>';
+      optionsEl.before(trigger);
+      renderTriggerValue(trigger, optionsEl);
+      optionsEl.style.display = 'none';
+
+      trigger.addEventListener('click', () => openPicker(titleText, optionsEl, trigger));
+      optionsEl.addEventListener('change', () => {
+        if (pickerOptionsEl !== optionsEl) renderTriggerValue(trigger, optionsEl);
+      });
+    });
+  }
+  setupPickers();
+
+  /* ==========================================================
+     PAPAN UCAPAN
+     ========================================================== */
+  const flowerColor = { Merah:'#e5484d', Pink:'#ff8fc7', Biru:'#5b9dff', Putih:'#ffffff' };
+  const papanForm = document.getElementById('papanForm');
+  const papanBoard2 = document.getElementById('papanBoard2');
+
+  document.querySelectorAll('input[name="paket"]').forEach(r => {
+    r.addEventListener('change', () => {
+      const showBoard2 = getChecked('paket') === '2';
+      papanBoard2.classList.toggle('hidden', !showBoard2);
+      papanBoard2.querySelectorAll('[data-req]').forEach(inp => inp.required = showBoard2);
+    });
+  });
+
+  function fillBoardPreview(suffix, atas, untuk, bawah, from, bentuk, papanWarna, bunga){
+    const s = suffix === '' ? '' : suffix;
+    document.getElementById('pvAtas' + s).textContent = atas || 'Congratulation';
+    document.getElementById('pvUntuk' + s).textContent = 'Untuk: ' + (untuk || 'Nama Penerima');
+    document.getElementById('pvBawah' + s).textContent = bawah || 'Selamat atas gelarnya';
+    document.getElementById('pvFrom' + s).textContent = 'From: ' + (from || '—');
+
+    const board = document.getElementById('boardPreview' + s);
+    board.classList.remove('shape-bulat', 'shape-kubah', 'color-putih', 'color-hitam', 'color-pink');
+    board.classList.add(bentuk === 'Kubah' ? 'shape-kubah' : 'shape-bulat');
+    board.classList.add('color-' + papanWarna.toLowerCase());
+
+    document.getElementById('flowerPreview' + s).style.setProperty('--flower-color', flowerColor[bunga]);
+  }
+
+  papanForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.reportValidity()) return;
+
+    const paketEl = document.querySelector('input[name="paket"]:checked');
+    const jumlah = paketEl.value;
+    const harga = parseInt(paketEl.dataset.harga, 10);
+    const dua = jumlah === '2';
+
+    fillBoardPreview('', val('ucapanAtas'), val('penerima'), val('ucapanBawah'), val('from'), getChecked('bentuk'), getChecked('papan'), getChecked('bunga'));
+    document.getElementById('boardStage2Wrap').classList.toggle('hidden', !dua);
+    if (dua){
+      fillBoardPreview('2', val('ucapanAtas2'), val('penerima2'), val('ucapanBawah2'), val('from2'), getChecked('bentuk2'), getChecked('papan2'), getChecked('bunga2'));
+    }
+
+    document.getElementById('sumJumlah').textContent = jumlah + (dua ? ' Papan (Bundling)' : ' Papan');
+    document.getElementById('sumTotal').textContent = formatRupiah(harga);
+
+    document.getElementById('previewModalPapan').classList.add('open');
+  });
+
+  document.getElementById('btnSendPapan').addEventListener('click', function(){
+    const paketEl = document.querySelector('input[name="paket"]:checked');
+    const jumlah = paketEl.value;
+    const harga = parseInt(paketEl.dataset.harga, 10);
+    const dua = jumlah === '2';
+    const tanggalFmt = formatTanggal('tanggal');
+
+    let pesan = `Halo Cenning Craft! 🌸 Saya mau pesan Papan Ucapan Akrilik.\n\n`;
+    pesan += `*Papan 1*\n`;
+    pesan += `Ucapan Atas: ${val('ucapanAtas')}\n`;
+    pesan += `Nama Penerima: ${val('penerima')}\n`;
+    pesan += `Ucapan Bawah: ${val('ucapanBawah') || '-'}\n`;
+    pesan += `From: ${val('from')}\n`;
+    pesan += `Warna Bunga: ${getChecked('bunga')}\n`;
+    pesan += `Bentuk Papan: ${getChecked('bentuk')}\n`;
+    pesan += `Warna Papan: ${getChecked('papan')}\n`;
+
+    if (dua){
+      pesan += `\n*Papan 2*\n`;
+      pesan += `Ucapan Atas: ${val('ucapanAtas2')}\n`;
+      pesan += `Nama Penerima: ${val('penerima2')}\n`;
+      pesan += `Ucapan Bawah: ${val('ucapanBawah2') || '-'}\n`;
+      pesan += `From: ${val('from2')}\n`;
+      pesan += `Warna Bunga: ${getChecked('bunga2')}\n`;
+      pesan += `Bentuk Papan: ${getChecked('bentuk2')}\n`;
+      pesan += `Warna Papan: ${getChecked('papan2')}\n`;
+    }
+
+    pesan += `\n*Jumlah Papan:* ${jumlah} papan\n`;
+    pesan += `*Tanggal Pengantaran:* ${tanggalFmt}\n`;
+    pesan += `*Alamat Pengantaran:* ${val('kampus')}\n\n`;
+    pesan += `*Total Harga:* ${formatRupiah(harga)}\n\n`;
+    pesan += `🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.\n${REK_TEXT}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+  });
+
+  /* ==========================================================
+     SELEMPANG
+     ========================================================== */
+  const slDetailBiasa = document.getElementById('slDetailBiasa');
+  const slDetailTimbal = document.getElementById('slDetailTimbal');
+  const slAddon = document.getElementById('slAddon');
+
+  function updateSlMode(){
+    const timbal = getChecked('slMode') === 'timbal';
+    slDetailBiasa.classList.toggle('hidden', timbal);
+    slDetailTimbal.classList.toggle('hidden', !timbal);
+  }
+  document.querySelectorAll('input[name="slMode"]').forEach(r => r.addEventListener('change', updateSlMode));
+  updateSlMode();
+
+  function updateSlAddon(){
+    const show = document.getElementById('slPapanToggle').checked;
+    slAddon.classList.toggle('hidden', !show);
+    slAddon.querySelectorAll('[data-req]').forEach(inp => inp.required = show);
+  }
+  document.getElementById('slPapanToggle').addEventListener('change', updateSlAddon);
+  updateSlAddon();
+
+  function slHargaSelempang(timbal){
+    if (timbal){
+      return sumHarga(['pinggiran1','leher1','hiasan1','batik1']) + sumHarga(['pinggiran2','leher2','hiasan2','batik2']);
+    }
+    return sumHarga(['pinggiran','leher','hiasan','lapisan','batik']);
+  }
+
+  function slSisiRows(suffix){
+    let html = '';
+    html += summaryRow('Warna Selempang', getChecked('warna' + suffix));
+    html += summaryRow('Jenis Pinggiran', getChecked('pinggiran' + suffix));
+    html += summaryRow('Model Leher', getChecked('leher' + suffix));
+    html += summaryRow('Hiasan Nama', getChecked('hiasan' + suffix));
+    if (!suffix) html += summaryRow('Tambahan Lapisan', getChecked('lapisan'));
+    html += summaryRow('Tambahan Batik Ujung', getChecked('batik' + suffix));
+    html += summaryRow('Panjang', getChecked('panjang' + suffix));
+    html += summaryRow('Warna Tulisan', getChecked('tulisan' + suffix));
+    html += summaryRow('Warna Logo', getChecked('logoWarna' + suffix));
+    html += summaryRow('Bagian Tengah', getChecked('tengah' + suffix));
+    return html;
+  }
+
+  function slSisiPesan(suffix){
+    let pesan = '';
+    pesan += `Warna Selempang: ${getChecked('warna' + suffix)}\n`;
+    pesan += `Jenis Pinggiran: ${getChecked('pinggiran' + suffix)}\n`;
+    pesan += `Model Leher: ${getChecked('leher' + suffix)}\n`;
+    pesan += `Hiasan Nama: ${getChecked('hiasan' + suffix)}\n`;
+    if (!suffix) pesan += `Tambahan Lapisan: ${getChecked('lapisan')}\n`;
+    pesan += `Tambahan Batik Ujung: ${getChecked('batik' + suffix)}\n`;
+    pesan += `Panjang Selempang: ${getChecked('panjang' + suffix)}\n`;
+    pesan += `Warna Tulisan: ${getChecked('tulisan' + suffix)}\n`;
+    pesan += `Warna Logo: ${getChecked('logoWarna' + suffix)}\n`;
+    pesan += `Bagian Tengah Selempang: ${getChecked('tengah' + suffix)}\n`;
+    return pesan;
+  }
+
+  document.getElementById('selempangForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.reportValidity()) return;
+
+    const timbal = getChecked('slMode') === 'timbal';
+    const papan = document.getElementById('slPapanToggle').checked;
+    const hargaSelempang = slHargaSelempang(timbal);
+    const hargaPapan = papan ? getHarga('slPapanToggle') : 0;
+    const total = hargaSelempang + hargaPapan;
+
+    let html = '';
+    html += summaryRow('Nama', val('slNama'));
+    html += summaryRow('Jurusan', val('slJurusan'));
+    html += summaryRow('Universitas', val('slUniversitas'));
+    html += summaryRow('Jenis Selempang', timbal ? 'Selempang Timbal Balik' : 'Selempang Biasa');
+    if (timbal){
+      html += summarySubhead('1️⃣ Sisi 1');
+      html += slSisiRows('1');
+      html += summarySubhead('2️⃣ Sisi 2');
+      html += slSisiRows('2');
+    } else {
+      html += slSisiRows('');
+    }
+    html += summaryRow('Tambah Papan Ucapan', papan ? 'Ya' : 'Tidak');
+    html += summaryRow('Tanggal Pengambilan', formatTanggal('slTanggal'));
+    html += summaryRow('Alamat Pengantaran', val('slLokasi'));
+    if (papan){
+      html += summarySubhead('💌 Papan Ucapan Tambahan');
+      html += summaryRow('Ucapan Atas', val('slPapanAtas'));
+      html += summaryRow('Nama Penerima', val('slPapanPenerima'));
+      html += summaryRow('From', val('slPapanFrom'));
+      html += summaryRow('Warna Bunga', getChecked('slPapanBunga'));
+      html += summaryRow('Bentuk / Warna Papan', getChecked('slPapanBentuk') + ' / ' + getChecked('slPapanWarna'));
+    }
+    html += summarySubhead('🧾 Rincian Harga');
+    html += summaryRow('Harga Selempang', formatRupiah(hargaSelempang));
+    if (papan) html += summaryRow('Harga Papan Tambahan', formatRupiah(hargaPapan));
+    html += `<div class="total"><span>Total Harga</span><span class="price-tag">${formatRupiah(total)}</span></div>`;
+
+    document.getElementById('slSummaryBody').innerHTML = html;
+    document.getElementById('previewModalSelempang').classList.add('open');
+  });
+
+  document.getElementById('btnSendSelempang').addEventListener('click', function(){
+    const timbal = getChecked('slMode') === 'timbal';
+    const papan = document.getElementById('slPapanToggle').checked;
+    const hargaSelempang = slHargaSelempang(timbal);
+    const hargaPapan = papan ? getHarga('slPapanToggle') : 0;
+    const total = hargaSelempang + hargaPapan;
+
+    let pesan = `Halo Cenning Craft! 🎗️ Saya mau pesan Selempang Wisuda.\n\n`;
+    pesan += `*Nama:* ${val('slNama')}\n`;
+    pesan += `*Jurusan:* ${val('slJurusan')}\n`;
+    pesan += `*Universitas:* ${val('slUniversitas')}\n`;
+    pesan += `*Jenis Selempang:* ${timbal ? 'Selempang Timbal Balik' : 'Selempang Biasa'}\n\n`;
+    if (timbal){
+      pesan += `*Sisi 1*\n` + slSisiPesan('1');
+      pesan += `\n*Sisi 2*\n` + slSisiPesan('2');
+    } else {
+      pesan += slSisiPesan('');
+    }
+    pesan += `\n*Tambah Papan Ucapan:* ${papan ? 'Ya' : 'Tidak'}\n`;
+    pesan += `*Tanggal Pengambilan:* ${formatTanggal('slTanggal')}\n`;
+    pesan += `*Alamat Pengantaran:* ${val('slLokasi')}\n`;
+
+    if (papan){
+      pesan += `\n*Papan Ucapan Tambahan*\n`;
+      pesan += `Ucapan Atas: ${val('slPapanAtas')}\n`;
+      pesan += `Nama Penerima: ${val('slPapanPenerima')}\n`;
+      pesan += `Ucapan Bawah: ${val('slPapanBawah') || '-'}\n`;
+      pesan += `From: ${val('slPapanFrom')}\n`;
+      pesan += `Warna Bunga: ${getChecked('slPapanBunga')}\n`;
+      pesan += `Bentuk Papan: ${getChecked('slPapanBentuk')}\n`;
+      pesan += `Warna Papan: ${getChecked('slPapanWarna')}\n`;
+    }
+
+    pesan += `\n*Rincian Harga*\n`;
+    pesan += `Harga Selempang: ${formatRupiah(hargaSelempang)}\n`;
+    if (papan) pesan += `Harga Papan Tambahan: ${formatRupiah(hargaPapan)}\n`;
+    pesan += `\n*Total Harga:* ${formatRupiah(total)}\n\n`;
+    pesan += `🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.\n${REK_TEXT}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+  });
+
+  /* ==========================================================
+     BUKET BUNGA
+     ========================================================== */
+  const bkAddon = document.getElementById('bkAddon');
+  function updateBkAddon(){
+    const show = getChecked('bkMode') === 'paket';
+    bkAddon.classList.toggle('hidden', !show);
+    bkAddon.querySelectorAll('[data-req]').forEach(inp => inp.required = show);
+  }
+  document.querySelectorAll('input[name="bkMode"]').forEach(r => r.addEventListener('change', updateBkAddon));
+  updateBkAddon();
+
+  document.getElementById('buketForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.reportValidity()) return;
+
+    const mode = getChecked('bkMode');
+    const paket = mode === 'paket';
+    const hargaBuket = getHarga('ukuran');
+    const hargaPapan = getHarga('bkMode');
+    const total = hargaBuket + hargaPapan;
+
+    let html = '';
+    html += summaryRow('Ukuran', getChecked('ukuran'));
+    html += summaryRow('Warna Buket', val('bkWarna'));
+    html += summaryRow('Paket', paket ? 'Buket + Papan Ucapan' : 'Buket Saja');
+    html += summaryRow('Tanggal Pengambilan', formatTanggal('bkTanggal'));
+    html += summaryRow('Alamat Pengantaran', val('bkLokasi'));
+    if (paket){
+      html += summarySubhead('💌 Papan Ucapan Tambahan');
+      html += summaryRow('Ucapan Atas', val('bkPapanAtas'));
+      html += summaryRow('Nama Penerima', val('bkPapanPenerima'));
+      html += summaryRow('From', val('bkPapanFrom'));
+      html += summaryRow('Warna Bunga Papan', getChecked('bkPapanBunga'));
+      html += summaryRow('Bentuk / Warna Papan', getChecked('bkPapanBentuk') + ' / ' + getChecked('bkPapanWarna'));
+      html += summarySubhead('🧾 Rincian Harga');
+      html += summaryRow('Harga Buket', formatRupiah(hargaBuket));
+      html += summaryRow('Harga Papan Tambahan', formatRupiah(hargaPapan));
+    }
+    html += `<div class="total"><span>Total Harga</span><span class="price-tag">${formatRupiah(total)}</span></div>`;
+
+    document.getElementById('bkSummaryBody').innerHTML = html;
+    document.getElementById('previewModalBuket').classList.add('open');
+  });
+
+  document.getElementById('btnSendBuket').addEventListener('click', function(){
+    const mode = getChecked('bkMode');
+    const paket = mode === 'paket';
+    const hargaBuket = getHarga('ukuran');
+    const hargaPapan = getHarga('bkMode');
+    const total = hargaBuket + hargaPapan;
+
+    let pesan = `Halo Cenning Craft! 💐 Saya mau pesan Buket Bunga.\n\n`;
+    pesan += `*Ukuran:* ${getChecked('ukuran')}\n`;
+    pesan += `*Warna Buket:* ${val('bkWarna')}\n`;
+    pesan += `*Paket:* ${paket ? 'Buket + Papan Ucapan' : 'Buket Saja'}\n`;
+    pesan += `*Tanggal Pengambilan:* ${formatTanggal('bkTanggal')}\n`;
+    pesan += `*Alamat Pengantaran:* ${val('bkLokasi')}\n`;
+
+    if (paket){
+      pesan += `\n*Papan Ucapan Tambahan*\n`;
+      pesan += `Ucapan Atas: ${val('bkPapanAtas')}\n`;
+      pesan += `Nama Penerima: ${val('bkPapanPenerima')}\n`;
+      pesan += `Ucapan Bawah: ${val('bkPapanBawah') || '-'}\n`;
+      pesan += `From: ${val('bkPapanFrom')}\n`;
+      pesan += `Warna Bunga Papan: ${getChecked('bkPapanBunga')}\n`;
+      pesan += `Bentuk Papan: ${getChecked('bkPapanBentuk')}\n`;
+      pesan += `Warna Papan: ${getChecked('bkPapanWarna')}\n`;
+      pesan += `\n*Rincian Harga*\n`;
+      pesan += `Harga Buket: ${formatRupiah(hargaBuket)}\n`;
+      pesan += `Harga Papan Tambahan: ${formatRupiah(hargaPapan)}\n`;
+    }
+
+    pesan += `\n*Total Harga:* ${formatRupiah(total)}\n\n`;
+    pesan += `🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.\n${REK_TEXT}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+  });
+
+  /* ==========================================================
+     KATALOG: FOTO PRODUK
+     Isi atribut data-photo="URL_FOTO" pada tiap .menu-card di HTML
+     untuk menampilkan foto asli. Kalau dikosongkan, ikon emoji tetap tampil.
+     ========================================================== */
+  document.querySelectorAll('#catalogGrid .menu-card').forEach(card => {
+    const url = card.dataset.photo;
+    if (!url) return;
+    const thumb = card.querySelector('.menu-thumb');
+    if (!thumb) return;
+    const img = document.createElement('img');
+    img.src = url;
+    img.alt = card.dataset.name || card.querySelector('.menu-title')?.textContent || 'Produk';
+    img.loading = 'lazy';
+    img.onerror = function(){ img.remove(); }; // kalau link foto rusak, balik ke ikon emoji
+    thumb.prepend(img);
+  });
+
+  /* ==========================================================
+     KATALOG: SEARCH & FILTER
+     ========================================================== */
+  const catalogSearch = document.getElementById('catalogSearch');
+  const catalogChips = document.querySelectorAll('#catalogChips .chip');
+  const catalogCards = document.querySelectorAll('#catalogGrid .menu-card');
+  const catalogEmpty = document.getElementById('catalogEmpty');
+  let activeCat = 'all';
+
+  function applyCatalogFilter(){
+    const q = catalogSearch.value.trim().toLowerCase();
+    let visibleCount = 0;
+    catalogCards.forEach(card => {
+      const matchesCat = activeCat === 'all' || card.dataset.cat === activeCat;
+      const matchesSearch = !q || (card.dataset.name || '').includes(q) || card.textContent.toLowerCase().includes(q);
+      const show = matchesCat && matchesSearch;
+      card.classList.toggle('hide', !show);
+      if (show) visibleCount++;
+    });
+    catalogEmpty.classList.toggle('show', visibleCount === 0);
+  }
+  if (catalogSearch){
+    catalogSearch.addEventListener('input', applyCatalogFilter);
+    catalogChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        catalogChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCat = chip.dataset.cat;
+        applyCatalogFilter();
+      });
+    });
+  }
+
+  /* ---------- floating whatsapp button ---------- */
+  const fabWa = document.getElementById('fabWa');
+  if (fabWa){
+    fabWa.addEventListener('click', () => {
+      const pesan = 'Halo Cenning Craft! 👋 Saya mau tanya-tanya soal produk kalian.';
+      window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+    });
+  }
+
+  /* ==========================================================
+     PREMIUM: Toast notifikasi
+     ========================================================== */
+  const toastEl = document.getElementById('toast');
+  let toastTimer = null;
+  function showToast(msg){
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2200);
+  }
+
+  /* ==========================================================
+     PREMIUM: Salin nomor rekening sekali klik
+     ========================================================== */
+  document.querySelectorAll('.copy-rek-btn').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const text = btn.dataset.copy;
+      const done = () => {
+        const original = btn.textContent;
+        btn.textContent = '✅ Tersalin';
+        btn.classList.add('copied');
+        showToast('Nomor rekening berhasil disalin 🤎');
+        setTimeout(() => { btn.textContent = original; btn.classList.remove('copied'); }, 1800);
+      };
+
+      // fallback untuk browser/WebView yang memblokir Clipboard API & execCommand
+      const manualFallback = () => {
+        window.prompt('Salin nomor rekening di bawah ini (tekan Copy setelah teks terpilih):', text);
+      };
+
+      // fallback berbasis input sementara (execCommand), aman untuk iOS Safari
+      const execCommandFallback = () => {
+        const input = document.createElement('input');
+        input.value = text;
+        input.setAttribute('readonly', '');
+        input.style.position = 'fixed';
+        input.style.top = '0';
+        input.style.left = '0';
+        input.style.opacity = '0';
+        document.body.appendChild(input);
+        input.focus();
+        input.setSelectionRange(0, text.length);
+        let ok = false;
+        try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+        document.body.removeChild(input);
+        if (ok) done();
+        else manualFallback();
+      };
+
+      if (window.isSecureContext && navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(done).catch(execCommandFallback);
+      } else {
+        execCommandFallback();
+      }
+    });
+  });
+
+  /* ==========================================================
+     PREMIUM: Bagikan katalog ke teman
+     ========================================================== */
+  const shareCatalogBtn = document.getElementById('shareCatalogBtn');
+  if (shareCatalogBtn){
+    shareCatalogBtn.addEventListener('click', function(){
+      const shareData = {
+        title: 'Cenning Craft — Katalog Produk Custom',
+        text: 'Cek katalog hadiah wisuda & custom dari Cenning Craft yuk! 🌸',
+        url: window.location.href
+      };
+      if (navigator.share){
+        navigator.share(shareData).catch(() => {});
+      } else {
+        const pesan = `${shareData.text}\n${shareData.url}`;
+        window.open(`https://wa.me/?text=${encodeURIComponent(pesan)}`, '_blank');
+      }
+    });
+  }
+
+  /* ==========================================================
+     BANNER CUSTOM
+     ========================================================== */
+  const bnAddon = document.getElementById('bnAddon');
+  function updateBnAddon(){
+    const show = getChecked('bnMode') === 'paket';
+    bnAddon.classList.toggle('hidden', !show);
+    bnAddon.querySelectorAll('[data-req]').forEach(inp => inp.required = show);
+  }
+  document.querySelectorAll('input[name="bnMode"]').forEach(r => r.addEventListener('change', updateBnAddon));
+  updateBnAddon();
+
+  document.getElementById('bannerForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.reportValidity()) return;
+
+    const mode = getChecked('bnMode');
+    const paket = mode === 'paket';
+    const hargaBanner = getHarga('bnUkuran');
+    const hargaPapan = getHarga('bnMode');
+    const total = hargaBanner + hargaPapan;
+
+    let html = '';
+    html += summaryRow('Ukuran', getChecked('bnUkuran'));
+    html += summaryRow('Paket', paket ? 'Banner + Papan Ucapan' : 'Banner Saja');
+    html += summaryRow('Tanggal Pengambilan', formatTanggal('bnTanggal'));
+    html += summaryRow('Lokasi', val('bnLokasi'));
+    if (paket){
+      html += summarySubhead('💌 Papan Ucapan Tambahan');
+      html += summaryRow('Ucapan Atas', val('bnPapanAtas'));
+      html += summaryRow('Nama Penerima', val('bnPapanPenerima'));
+      html += summaryRow('From', val('bnPapanFrom'));
+      html += summaryRow('Warna Bunga Papan', getChecked('bnPapanBunga'));
+      html += summaryRow('Bentuk / Warna Papan', getChecked('bnPapanBentuk') + ' / ' + getChecked('bnPapanWarna'));
+      html += summarySubhead('🧾 Rincian Harga');
+      html += summaryRow('Harga Banner', formatRupiah(hargaBanner));
+      html += summaryRow('Harga Papan Tambahan', formatRupiah(hargaPapan));
+    }
+    html += `<div class="total"><span>Total Harga</span><span class="price-tag">${formatRupiah(total)}</span></div>`;
+
+    document.getElementById('bnSummaryBody').innerHTML = html;
+    document.getElementById('previewModalBanner').classList.add('open');
+  });
+
+  document.getElementById('btnSendBanner').addEventListener('click', function(){
+    const mode = getChecked('bnMode');
+    const paket = mode === 'paket';
+    const hargaBanner = getHarga('bnUkuran');
+    const hargaPapan = getHarga('bnMode');
+    const total = hargaBanner + hargaPapan;
+
+    let pesan = `Halo Cenning Craft! 🏳️ Saya mau pesan Banner Custom.\n\n`;
+    pesan += `*Ukuran:* ${getChecked('bnUkuran')}\n`;
+    pesan += `*Paket:* ${paket ? 'Banner + Papan Ucapan' : 'Banner Saja'}\n`;
+    pesan += `*Tanggal Pengambilan:* ${formatTanggal('bnTanggal')}\n`;
+    pesan += `*Lokasi:* ${val('bnLokasi')}\n`;
+
+    if (paket){
+      pesan += `\n*Papan Ucapan Tambahan*\n`;
+      pesan += `Ucapan Atas: ${val('bnPapanAtas')}\n`;
+      pesan += `Nama Penerima: ${val('bnPapanPenerima')}\n`;
+      pesan += `Ucapan Bawah: ${val('bnPapanBawah') || '-'}\n`;
+      pesan += `From: ${val('bnPapanFrom')}\n`;
+      pesan += `Warna Bunga Papan: ${getChecked('bnPapanBunga')}\n`;
+      pesan += `Bentuk Papan: ${getChecked('bnPapanBentuk')}\n`;
+      pesan += `Warna Papan: ${getChecked('bnPapanWarna')}\n`;
+      pesan += `\n*Rincian Harga*\n`;
+      pesan += `Harga Banner: ${formatRupiah(hargaBanner)}\n`;
+      pesan += `Harga Papan Tambahan: ${formatRupiah(hargaPapan)}\n`;
+    }
+
+    pesan += `\n*Total Harga:* ${formatRupiah(total)}\n\n`;
+    pesan += `🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.\n${REK_TEXT}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+  });
+
+  /* ==========================================================
+     PLAKAT CUSTOM
+     ========================================================== */
+  const pkAddon = document.getElementById('pkAddon');
+  function updatePkAddon(){
+    const show = getChecked('pkMode') === 'paket';
+    pkAddon.classList.toggle('hidden', !show);
+    pkAddon.querySelectorAll('[data-req]').forEach(inp => inp.required = show);
+  }
+  document.querySelectorAll('input[name="pkMode"]').forEach(r => r.addEventListener('change', updatePkAddon));
+  updatePkAddon();
+
+  document.getElementById('plakatForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.reportValidity()) return;
+
+    const mode = getChecked('pkMode');
+    const paket = mode === 'paket';
+    const hargaJenis = getHarga('pkJenis');
+    const hargaBox = getHarga('pkBox');
+    const hargaPapan = getHarga('pkMode');
+    const total = hargaJenis + hargaBox + hargaPapan;
+
+    let html = '';
+    html += summaryRow('Bahan & Ukuran', getChecked('pkJenis'));
+    html += summaryRow('Kemasan Box', getChecked('pkBox'));
+    html += summaryRow('Paket', paket ? 'Plakat + Papan Ucapan' : 'Plakat Saja');
+    html += summaryRow('Tanggal Pengambilan', formatTanggal('pkTanggal'));
+    html += summaryRow('Lokasi', val('pkLokasi'));
+    if (paket){
+      html += summarySubhead('💌 Papan Ucapan Tambahan');
+      html += summaryRow('Ucapan Atas', val('pkPapanAtas'));
+      html += summaryRow('Nama Penerima', val('pkPapanPenerima'));
+      html += summaryRow('From', val('pkPapanFrom'));
+      html += summaryRow('Warna Bunga Papan', getChecked('pkPapanBunga'));
+      html += summaryRow('Bentuk / Warna Papan', getChecked('pkPapanBentuk') + ' / ' + getChecked('pkPapanWarna'));
+      html += summarySubhead('🧾 Rincian Harga');
+      html += summaryRow('Harga Plakat', formatRupiah(hargaJenis + hargaBox));
+      html += summaryRow('Harga Papan Tambahan', formatRupiah(hargaPapan));
+    }
+    html += `<div class="total"><span>Total Harga</span><span class="price-tag">${formatRupiah(total)}</span></div>`;
+
+    document.getElementById('pkSummaryBody').innerHTML = html;
+    document.getElementById('previewModalPlakat').classList.add('open');
+  });
+
+  document.getElementById('btnSendPlakat').addEventListener('click', function(){
+    const mode = getChecked('pkMode');
+    const paket = mode === 'paket';
+    const hargaJenis = getHarga('pkJenis');
+    const hargaBox = getHarga('pkBox');
+    const hargaPapan = getHarga('pkMode');
+    const total = hargaJenis + hargaBox + hargaPapan;
+
+    let pesan = `Halo Cenning Craft! 🏆 Saya mau pesan Plakat Custom.\n\n`;
+    pesan += `*Bahan & Ukuran:* ${getChecked('pkJenis')}\n`;
+    pesan += `*Kemasan Box:* ${getChecked('pkBox')}\n`;
+    pesan += `*Paket:* ${paket ? 'Plakat + Papan Ucapan' : 'Plakat Saja'}\n`;
+    pesan += `*Tanggal Pengambilan:* ${formatTanggal('pkTanggal')}\n`;
+    pesan += `*Lokasi:* ${val('pkLokasi')}\n`;
+
+    if (paket){
+      pesan += `\n*Papan Ucapan Tambahan*\n`;
+      pesan += `Ucapan Atas: ${val('pkPapanAtas')}\n`;
+      pesan += `Nama Penerima: ${val('pkPapanPenerima')}\n`;
+      pesan += `Ucapan Bawah: ${val('pkPapanBawah') || '-'}\n`;
+      pesan += `From: ${val('pkPapanFrom')}\n`;
+      pesan += `Warna Bunga Papan: ${getChecked('pkPapanBunga')}\n`;
+      pesan += `Bentuk Papan: ${getChecked('pkPapanBentuk')}\n`;
+      pesan += `Warna Papan: ${getChecked('pkPapanWarna')}\n`;
+      pesan += `\n*Rincian Harga*\n`;
+      pesan += `Harga Plakat: ${formatRupiah(hargaJenis + hargaBox)}\n`;
+      pesan += `Harga Papan Tambahan: ${formatRupiah(hargaPapan)}\n`;
+    }
+
+    pesan += `\n*Total Harga:* ${formatRupiah(total)}\n\n`;
+    pesan += `🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.\n${REK_TEXT}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+  });
+
+  /* ==========================================================
+     UPLOAD FOTO (imgbb, gratis)
+     Daftar gratis di https://api.imgbb.com/ untuk dapat API key,
+     lalu tempel di bawah ini. Kalau dikosongkan, fitur upload
+     otomatis akan nonaktif dan pelanggan diminta kirim foto manual via WA.
+     ========================================================== */
+  const IMGBB_API_KEY = ""; // <-- tempel API key gratis dari api.imgbb.com di sini
+
+  function setupPhotoUpload(prefix){
+    const fileInput = document.getElementById(prefix + 'FotoFile');
+    const previewWrap = document.getElementById(prefix + 'FotoPreviewWrap');
+    const previewImg = document.getElementById(prefix + 'FotoPreviewImg');
+    const removeBtn = document.getElementById(prefix + 'FotoRemove');
+    const statusEl = document.getElementById(prefix + 'FotoStatus');
+    const urlInput = document.getElementById(prefix + 'FotoUrl');
+    if (!fileInput) return;
+
+    fileInput.addEventListener('change', function(){
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      if (file.size > 5 * 1024 * 1024){
+        statusEl.textContent = '❌ Ukuran foto maks 5MB ya.';
+        statusEl.className = 'file-status error';
+        fileInput.value = '';
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(ev){
+        previewImg.src = ev.target.result;
+        previewWrap.classList.add('show');
+      };
+      reader.readAsDataURL(file);
+
+      if (!IMGBB_API_KEY){
+        statusEl.textContent = 'ℹ️ Preview siap. Foto asli tetap dikirim manual lewat WhatsApp setelah pesan ini terkirim.';
+        statusEl.className = 'file-status';
+        urlInput.value = '';
+        return;
+      }
+
+      statusEl.textContent = '⏳ Mengunggah foto...';
+      statusEl.className = 'file-status uploading';
+      urlInput.value = '';
+
+      const formData = new FormData();
+      formData.append('image', file);
+
+      fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, { method: 'POST', body: formData })
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.data && data.data.url){
+            urlInput.value = data.data.url;
+            statusEl.textContent = '✅ Foto berhasil diunggah.';
+            statusEl.className = 'file-status done';
+          } else {
+            throw new Error('Upload gagal');
+          }
+        })
+        .catch(() => {
+          statusEl.textContent = '⚠️ Gagal unggah otomatis. Foto tetap dikirim manual lewat WhatsApp ya.';
+          statusEl.className = 'file-status error';
+          urlInput.value = '';
+        });
+    });
+
+    if (removeBtn){
+      removeBtn.addEventListener('click', function(){
+        fileInput.value = '';
+        urlInput.value = '';
+        previewWrap.classList.remove('show');
+        statusEl.textContent = '';
+      });
+    }
+  }
+
+  /* ==========================================================
+     FIGURA & BINGKAI
+     ========================================================== */
+  const fgAddon = document.getElementById('fgAddon');
+  function updateFgAddon(){
+    const show = getChecked('fgMode') === 'paket';
+    fgAddon.classList.toggle('hidden', !show);
+    fgAddon.querySelectorAll('[data-req]').forEach(inp => inp.required = show);
+  }
+  document.querySelectorAll('input[name="fgMode"]').forEach(r => r.addEventListener('change', updateFgAddon));
+  updateFgAddon();
+
+  document.getElementById('figuraForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    if (!this.reportValidity()) return;
+
+    const mode = getChecked('fgMode');
+    const paket = mode === 'paket';
+    const hargaFigura = getHarga('fgUkuran');
+    const hargaPapan = getHarga('fgMode');
+    const total = hargaFigura + hargaPapan;
+    let html = '';
+    html += summaryRow('Ukuran', getChecked('fgUkuran'));
+    html += summaryRow('Warna Bingkai', getChecked('fgJenis'));
+    html += summaryRow('Ucapan di Bingkai', val('fgUcapan') || '-');
+    html += summaryRow('Foto', 'Dikirim langsung via WhatsApp setelah pesan ini terkirim');
+    html += summaryRow('Catatan Foto', val('fgFotoCatatan') || '-');
+    html += summaryRow('Paket', paket ? 'Figura + Papan Ucapan' : 'Figura Saja');
+    html += summaryRow('Tanggal Pengambilan', formatTanggal('fgTanggal'));
+    html += summaryRow('Lokasi', val('fgLokasi'));
+    if (paket){
+      html += summarySubhead('💌 Papan Ucapan Tambahan');
+      html += summaryRow('Ucapan Atas', val('fgPapanAtas'));
+      html += summaryRow('Nama Penerima', val('fgPapanPenerima'));
+      html += summaryRow('From', val('fgPapanFrom'));
+      html += summaryRow('Warna Bunga Papan', getChecked('fgPapanBunga'));
+      html += summaryRow('Bentuk / Warna Papan', getChecked('fgPapanBentuk') + ' / ' + getChecked('fgPapanWarna'));
+      html += summarySubhead('🧾 Rincian Harga');
+      html += summaryRow('Harga Figura', formatRupiah(hargaFigura));
+      html += summaryRow('Harga Papan Tambahan', formatRupiah(hargaPapan));
+    }
+    html += `<div class="total"><span>Total Harga</span><span class="price-tag">${formatRupiah(total)}</span></div>`;
+
+    document.getElementById('fgSummaryBody').innerHTML = html;
+    document.getElementById('previewModalFigura').classList.add('open');
+  });
+
+  document.getElementById('btnSendFigura').addEventListener('click', function(){
+    const mode = getChecked('fgMode');
+    const paket = mode === 'paket';
+    const hargaFigura = getHarga('fgUkuran');
+    const hargaPapan = getHarga('fgMode');
+    const total = hargaFigura + hargaPapan;
+
+    let pesan = `Halo Cenning Craft! 🖼️ Saya mau pesan Figura & Bingkai.\n\n`;
+    pesan += `*Ukuran:* ${getChecked('fgUkuran')}\n`;
+    pesan += `*Warna Bingkai:* ${getChecked('fgJenis')}\n`;
+    pesan += `*Ucapan di Bingkai:* ${val('fgUcapan') || '-'}\n`;
+    pesan += `*Foto:* akan saya kirimkan menyusul di chat ini ya 🙏\n`;
+    pesan += `*Catatan Foto:* ${val('fgFotoCatatan') || '-'}\n`;
+    pesan += `*Paket:* ${paket ? 'Figura + Papan Ucapan' : 'Figura Saja'}\n`;
+    pesan += `*Tanggal Pengambilan:* ${formatTanggal('fgTanggal')}\n`;
+    pesan += `*Lokasi:* ${val('fgLokasi')}\n`;
+
+    if (paket){
+      pesan += `\n*Papan Ucapan Tambahan*\n`;
+      pesan += `Ucapan Atas: ${val('fgPapanAtas')}\n`;
+      pesan += `Nama Penerima: ${val('fgPapanPenerima')}\n`;
+      pesan += `Ucapan Bawah: ${val('fgPapanBawah') || '-'}\n`;
+      pesan += `From: ${val('fgPapanFrom')}\n`;
+      pesan += `Warna Bunga Papan: ${getChecked('fgPapanBunga')}\n`;
+      pesan += `Bentuk Papan: ${getChecked('fgPapanBentuk')}\n`;
+      pesan += `Warna Papan: ${getChecked('fgPapanWarna')}\n`;
+      pesan += `\n*Rincian Harga*\n`;
+      pesan += `Harga Figura: ${formatRupiah(hargaFigura)}\n`;
+      pesan += `Harga Papan Tambahan: ${formatRupiah(hargaPapan)}\n`;
+    }
+
+    pesan += `\n*Total Harga:* ${formatRupiah(total)}\n\n`;
+    pesan += `🤎 Mohon untuk melakukan pelunasan agar pesanan segera diproses.\n${REK_TEXT}`;
+
+    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(pesan)}`, '_blank');
+  });
+</script>
+</body>
+</html>
